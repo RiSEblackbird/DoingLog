@@ -1,0 +1,13 @@
+/* サイドバー */
+.sidebar {
+    z-index: 4;
+    position: sticky;
+    top: -10vh;
+    margin-top: 60px;
+    height: 80vh;
+    min-width: 9em;
+    max-width: 10em;
+    .card-body {
+      min-height: 15vh;
+    }
+  }

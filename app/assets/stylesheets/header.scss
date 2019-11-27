@@ -1,0 +1,18 @@
+/* ヘッダー */
+#header-content {
+    z-index: 5;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    .header-menu {
+      background-color: #4C0065;
+      padding: 0 10px 0 10px;
+    }
+    #readme-btn {
+      font-size: 12px;
+    }
+    .grass-image {
+      width: 100%;
+    }
+  }
