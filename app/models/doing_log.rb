@@ -1,0 +1,2 @@
+class DoingLog < ApplicationRecord
+end
