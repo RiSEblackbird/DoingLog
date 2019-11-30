@@ -1,0 +1,40 @@
+<header id="header-content">
+  <div class="container-fruid">
+    <nav class="navbar header-menu d-flex">
+      <ul class="navbar-nav  navbar-expand">
+        <li class="nav-item"><a class="navbar-brand" href="/home">ホーム</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="/users">アカウント一覧</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="/tags">タグ一覧</a></li>
+        <li class="nav-item align-self-center">
+          <form class="form-inline">
+          <% if user_signed_in? %>
+            <%= link_to '新規記事作成', new_article_url,
+                class: 'btn btn-sm btn-dark btn-block navbar-text p-1' %>
+          <% end %>
+          </form>
+        </li>
+      </ul>
+      <% if user_signed_in? %>
+        <div class="dropdown">
+          <button class="btn btn-sm btn-dark dropdown-toggle" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag current_user.image.url, class: 'rounded', :size => '15x15' if current_user.image.url.present? %>
+            <%= current_user.username %> さん
+            <%= render 'users/user_card_attribute_badge', user: current_user %>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item" type="button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>
+            <button class="dropdown-item" type="button"><%= link_to 'ユーザー設定変更', edit_user_registration_path %></button>
+            <button class="dropdown-item" type="button"><%= link_to 'ユーザー詳細', current_user %></button>
+            <% if current_user.try(:admin_flg?) %>
+              <button class="dropdown-item" type="button"><%= link_to '管理者ツール画面', rails_admin_path %></button>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to 'ログイン', new_user_session_path,
+          class: 'col-2 float-right btn btn-sm btn-primary btn-block' %>
+      <% end %>
+    </nav>
+  </div>
+</header>
