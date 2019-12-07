@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_055129) do
+ActiveRecord::Schema.define(version: 2019_11_27_112819) do
+
+  create_table "doing_logs", force: :cascade do |t|
+    t.string "title"
+    t.text "summary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "problems", force: :cascade do |t|
+    t.string "title"
+    t.text "summary"
+    t.boolean "solved", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
@@ -36,7 +51,17 @@ ActiveRecord::Schema.define(version: 2019_11_27_055129) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "taggings_count", default: 0
+    t.string "tagCategory"
+    t.text "summary"
     t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
+  create_table "tries", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.boolean "effective", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
