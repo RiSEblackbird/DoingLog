@@ -114,6 +114,8 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
+    faker (2.8.1)
+      i18n (>= 1.6, < 1.8)
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.3)
@@ -360,6 +362,7 @@ DEPENDENCIES
   devise-i18n-views
   devise_token_auth
   dotenv-rails
+  faker
   foreman
   google-analytics-rails
   jbuilder (~> 2.7)
