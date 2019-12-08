@@ -31,11 +31,27 @@
       - 試行のタイトル(title),
       - 問題解決に効果的な試行であるか？（effective ; チェックボックス）,
       - *タグ(Tags),
-      - 試行の内容(body)       
+      - 試行の内容(body)
 - *タグ(Tags)
   - タグ名(neme),
   - 何に対して付けるタグなのか（tagCategory ; { DoingLog, Problem, Trying }）,
   - タグの概要(summary)
+
+## 使用技術
+- BASE
+  - ruby 2.5.3
+  - rails 6.0.1
+  - SQLite (development)
+  - MySQL (production)
+  - Heroku
+- TEST
+  - RSpec
+- FRONT
+  - Bootstrap4
+- DEBUG
+  - bybug
+  - better_errors
+  - rails_panel
 
 ## 追加Gem
 
@@ -60,22 +76,12 @@ gem 'devise-i18n-views'
 # 環境変数の管理
 gem 'dotenv-rails'
 
-# Deviceで導入したUserモデルにOAuthでGoogleアカウントでログイン
-gem 'devise_token_auth'
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-
-# OmniAuthの脆弱性対応
-gem 'omniauth-rails_csrf_protection'
-
 # Googleアナリティクス(気が向いたら使う)
 gem 'google-analytics-rails'
 
 # ページネーション
 gem 'kaminari'
 
-# アプリ名変更 - 仕様の変更でDoingLogが妥当なアプリ名じゃなくなったら使う
-gem 'rename'
 ```
 
 ## Models
@@ -198,6 +204,3 @@ definitions:
   
 もし本アプリがうまく作れれば、上記リポジトリに着手するかもしれない。(活動スケジュール次第)  
 初期のGemセッティングは2019/11/27時点のDoingLogを踏襲。
-
-
-
