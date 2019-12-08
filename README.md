@@ -188,6 +188,11 @@ definitions:
     - **[deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)**
       - $ rails g devise UserでUserテーブルが"作成"ではなく"変更"としてマイグレーションファイルに記載されてしまう事象への対処。
 
+- RSpec
+  - **書籍：[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)**
+  - **[ruby – RSpecマッチャーを複数行に分割](https://codeday.me/jp/qa/20190727/1315872.html)**
+    - expect後ろの改行について expect(...).to include
+
 - DB  
   - **[mysql2 gemインストール時のトラブルシュート](https://qiita.com/HrsUed/items/ca2e0aee6a2402571cf6)**  
   - **[Railsでmysql2がインストールできない](https://qiita.com/Yutazon/items/8d1e538b8c89fc7bda3c)**  
