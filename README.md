@@ -1,4 +1,4 @@
-# DoingLog-Rails-only-
+# DoingLog
 ### サービス開発の経緯
 　個人で開発や勉強をしていると、行き詰まることはよくある。  
 　その際、すぐには質問をせずに自分であれこれ調べて解決を試みるが、自己解決に限界を感じる直前で問題が解消するようなことが多い。  
@@ -34,8 +34,11 @@
       - 試行の内容(body)
 - *タグ(Tags)
   - タグ名(neme),
-  - 何に対して付けるタグなのか（tagCategory ; { DoingLog, Problem, Trying }）,
   - タグの概要(summary)
+- タグ管理用の中間テーブル
+  - DoingLogsTags
+  - ProblemsTags
+  - TriesTags
 
 ## 使用技術
 - BASE
@@ -176,28 +179,18 @@ definitions:
 ## Reference articles
 
 - 全般  
-  **[Rails 5 API + Vue.js + devise_token_authでTwitterと連携するSPAを作る（①RAILS編）](https://qiita.com/natsukingdom-yamaguchi/items/15142bd4ad77679afb04)**  
-  - アプリ制作の基本的な流れを参考する。  
-
-- Rails  
-  **[RailsでいろんなSNSとOAuth連携/ログインする方法](https://qiita.com/awakia/items/03dd68dea5f15dc46c15)**  
-  **[[Rails]gem "OmniAuth" の脆弱性対策](https://qiita.com/NT90957869/items/2a3ce18dedf93ccf2bdc)**  
-    - githubで脆弱性を警告されることに対する対応。  
-    
-  **[Devise に omniauth-google-oauth2 でGoogle認証を追加する (Rails 5.2.2)](https://ontheneworbit.blogspot.com/2019/03/devise-omniauth-google-oauth2-google.html)**  
-  **[RailsでFacebookとGoogleのOAuth連携。SNS認証の方法](https://qiita.com/nakanishi03/items/2dfe8b8431a044a01bc6)**  
-    - この記事で環境変数を管理するGem 'dotenv-rails' を知った。  
-    
-  **[gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)**  
+- Rails
+  - **[Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)**
+  - **[gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)**  
 
   - Devise
-  **[[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)**
-  **[deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)**
-    - $ rails g devise UserでUserテーブルが"作成"ではなく"変更"としてマイグレーションファイルに記載されてしまう事象への対処。
+    - **[[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)**
+    - **[deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)**
+      - $ rails g devise UserでUserテーブルが"作成"ではなく"変更"としてマイグレーションファイルに記載されてしまう事象への対処。
 
 - DB  
-  **[mysql2 gemインストール時のトラブルシュート](https://qiita.com/HrsUed/items/ca2e0aee6a2402571cf6)**  
-  **[Railsでmysql2がインストールできない](https://qiita.com/Yutazon/items/8d1e538b8c89fc7bda3c)**  
+  - **[mysql2 gemインストール時のトラブルシュート](https://qiita.com/HrsUed/items/ca2e0aee6a2402571cf6)**  
+  - **[Railsでmysql2がインストールできない](https://qiita.com/Yutazon/items/8d1e538b8c89fc7bda3c)**  
 
 ## 本リポジトリについて覚書
 既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。ポートフォリオというよりは個人での実用を意識しているので、動く様子を早く見たい。  
