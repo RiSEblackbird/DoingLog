@@ -18,7 +18,7 @@ module RailsOnlyForDoingLog
 
     config.generators do |g|
       g.test_framework :rspec,
-      fixtures: false,
+      # fixtures: false,
       view_specs: false,
       helpers_specs: false,
       routing_specs: false
