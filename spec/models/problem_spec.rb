@@ -2,45 +2,31 @@ require 'rails_helper'
 
 RSpec.describe Problem, type: :model do
   it "成功例：title, summary" do
-    problem = Problem.new(
-      title: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{100}"),
-      summary: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{1000}"),
-    )
+    problem = FactoryBot.build(:problem)
+    expect(problem).to be_valid
   end
 
   it "文字制限(上限)：titleを101文字で登録する" do
-    problem = Problem.new(
-      title: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{101}"),
-      summary: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{1000}"),
-    )
+    problem = FactoryBot.build(:problem, title: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{101}"))
+    problem.valid?
     expect(problem.errors[:title]).to include("タイトルは100文字以内にしてください。")
   end
 
   it "文字制限(上限)：summaryを1001文字で登録する" do
-    problem = Problem.new(
-      title: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{100}"),
-      summary: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{1001}"),
-    )
+    problem = FactoryBot.build(:problem, summary: Faker::Base.regexify("[aふぃ5786おさgjgsgあ]{1001}"))
+    problem.valid?
     expect(problem.errors[:summary]).to include("概要は1000文字以内にしてください。")
   end
 
   it "重複不可：既存タイトル(title)を登録する" do
-    Problem.create(
-      title: "○○実装時のエラー. ~~~.",
-      summary: "退勤ラッシュの京王井の頭線の外側方面で、停車時に扉が開くと数人が車外に弾き飛ばされてしまう。",
-    )
-    problem = Problem.new(
-      title: "○○実装時のエラー. ~~~.",
-      summary: "新しい昼寝のあり方をプロデュースするも全くウケない。",
-    )
+    FactoryBot.create(:problem, title: "○○実装時のエラー. ~~~.")
+    problem = FactoryBot.build(:problem, title: "○○実装時のエラー. ~~~.")
+    problem.valid?
     expect(problem.errors[:title]).to include("既に使用されているタイトルは登録できません。")
   end
 
   it "必須入力：titleの未入力" do
-    problem = Problem.new(
-      title: nil,
-      summary: "退勤ラッシュの京王井の頭線の外側方面で、停車時に扉が開くと数人が車外に弾き飛ばされてしまう。",
-    )
+    problem = FactoryBot.build(:problem, title: nil)
     problem.valid?
     expect(problem.errors[:title]).to include("取り組み事項のタイトルは必須入力項目です。")
   end
