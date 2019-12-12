@@ -196,6 +196,10 @@ definitions:
     - **[deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)**
       - $ rails g devise UserでUserテーブルが"作成"ではなく"変更"としてマイグレーションファイルに記載されてしまう事象への対処。
 
+  - ActsAsTaggableOn
+    - **[Railsでacts-as-taggable-onを使ってタグ管理を行う](https://ruby-rails.hatenadiary.com/entry/20150225/1424858414)**
+      - 扱い方をまとめてくれている。
+
 - RSpec
   - **書籍：[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)**
   - **[ruby – RSpecマッチャーを複数行に分割](https://codeday.me/jp/qa/20190727/1315872.html)**
