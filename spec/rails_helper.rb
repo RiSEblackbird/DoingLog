@@ -65,7 +65,5 @@ RSpec.configure do |config|
   require 'capybara/rspec'
 
   # Devise提供のログイン検証用のヘルパーを適用
-  config.include
-  Devise::Test::ControllerHelpers, type: :controller
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
