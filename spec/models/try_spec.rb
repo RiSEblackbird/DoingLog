@@ -26,7 +26,7 @@ RSpec.describe Try, type: :model do
   end
 
   it "必須入力：titleの未入力" do
-    try = FactoryBot.build(:try, title: nil))
+    try = FactoryBot.build(:try, title: nil)
     try.valid?
     expect(try.errors[:title]).to include("取り組み事項のタイトルは必須入力項目です。")
   end
