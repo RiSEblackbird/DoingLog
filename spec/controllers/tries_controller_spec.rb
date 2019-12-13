@@ -82,5 +82,27 @@ RSpec.describe TriesController, type: :controller do
                 expect(response).to redirect_to root_path
             end
         end
+
+        context "ログイン無しの場合の応答" do
+            before do
+                @try = FactoryBot.create(:try, user: other_user, 
+                    title: "Other's")
+            end
+            it "サインインページへのリダイレクト" do
+                try_params = FactoryBot.attributes_for(:try, 
+                    title: "New try title")
+                patch :update, params: { id: @try.id, 
+                    try: try_params }
+                expext(response).to redirect_to "/users/sign_in"
+            end
+
+            it "302レスポンス" do
+                try_params = FactoryBot.attributes_for(:try, 
+                    title: "New try title")
+                patch :update, params: { id: @try.id, 
+                    try: try_params }
+                expect(response).to have_htttp_status "302"
+            end
+        end
     end
 end

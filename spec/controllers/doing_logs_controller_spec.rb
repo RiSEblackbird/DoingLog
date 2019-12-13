@@ -114,5 +114,27 @@ RSpec.describe DoingLogsController, type: :controller do
                 expect(response).to redirect_to root_path
             end
         end
+
+        context "ログイン無しの場合の応答" do
+            before do
+                @doing_log = FactoryBot.create(:doing_log, user: other_user, 
+                    title: "Other's")
+            end
+            it "サインインページへのリダイレクト" do
+                doing_log_params = FactoryBot.attributes_for(:doing_log, 
+                    title: "New doing_log title")
+                patch :update, params: { id: @doing_log.id, 
+                    doing_log: doing_log_params }
+                expext(response).to redirect_to "/users/sign_in"
+            end
+
+            it "302レスポンス" do
+                doing_log_params = FactoryBot.attributes_for(:doing_log, 
+                    title: "New doing_log title")
+                patch :update, params: { id: @doing_log.id, 
+                    doing_log: doing_log_params }
+                expect(response).to have_htttp_status "302"
+            end
+        end
     end
 end

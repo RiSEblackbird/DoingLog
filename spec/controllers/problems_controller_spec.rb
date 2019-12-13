@@ -82,5 +82,27 @@ RSpec.describe ProblemsController, type: :controller do
                 expect(response).to redirect_to root_path
             end
         end
+
+        context "ログイン無しの場合の応答" do
+            before do
+                @problem = FactoryBot.create(:problem, user: other_user, 
+                    title: "Other's")
+            end
+            it "サインインページへのリダイレクト" do
+                problem_params = FactoryBot.attributes_for(:problem, 
+                    title: "New problem title")
+                patch :update, params: { id: @problem.id, 
+                    problem: problem_params }
+                expext(response).to redirect_to "/users/sign_in"
+            end
+
+            it "302レスポンス" do
+                problem_params = FactoryBot.attributes_for(:problem, 
+                    title: "New problem title")
+                patch :update, params: { id: @problem.id, 
+                    problem: problem_params }
+                expect(response).to have_htttp_status "302"
+            end
+        end
     end
 end
