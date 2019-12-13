@@ -97,6 +97,7 @@ RSpec.describe DoingLogsController, type: :controller do
                 @doing_log = FactoryBot.create(:doing_log, user: other_user, 
                     title: "Other's")
             end
+
             it "doing_logの更新不可" do
                 doing_log_params = FactoryBot.attributes_for(:doing_log, 
                     title: "New doing_log title")
@@ -117,9 +118,9 @@ RSpec.describe DoingLogsController, type: :controller do
 
         context "ログイン無しの場合の応答" do
             before do
-                @doing_log = FactoryBot.create(:doing_log, user: other_user, 
-                    title: "Other's")
+                @doing_log = FactoryBot.create(:doing_log, title: "Other's")
             end
+
             it "サインインページへのリダイレクト" do
                 doing_log_params = FactoryBot.attributes_for(:doing_log, 
                     title: "New doing_log title")
@@ -134,6 +135,65 @@ RSpec.describe DoingLogsController, type: :controller do
                 patch :update, params: { id: @doing_log.id, 
                     doing_log: doing_log_params }
                 expect(response).to have_htttp_status "302"
+            end
+        end
+    end
+
+    describe "#destroy" do
+        context "ログイン済みユーザーでの応答" do
+            before do
+                @user = FactoryBot.create(:user)
+                @doing_log = FactoryBot.create(:doing_log, user: @user)
+            end
+
+            it "doing_logの削除" do
+                doing_log_params = FactoryBot.attributes_for(:doing_log, 
+                    title: "Updated doing_log title")
+                sign_in @user
+                expect {delete :destroy, params: { id: @doing_log.id }}.to change(@user.doing_logs, :count).by(-1)
+            end
+        end
+
+        context "作成者以外のユーザーでの応答" do
+            before do
+                @user = FactoryBot.create(:user)
+                other_user = FactoryBot.create(:user)
+                @doing_log = FactoryBot.create(:doing_log, user: other_user)
+            end
+
+            it "doing_logの削除不可" do
+                sign_in @user
+                expect {delete :destroy, params: { id: @doing_log.id }}.to_not change(DoingLog, :count)
+            end
+
+            it "ルートにリダイレクトすること" do
+                sign_in @user
+                delete :destroy, params: { id: @doing_log.id }
+                expect(response).to redirect_to root_path
+            end
+        end
+
+        context "ログイン無しの場合の応答" do
+            before do
+                @doing_log = FactoryBot.create(:doing_log)
+            end
+
+            it "サインインページへのリダイレクト" do
+                doing_log_params = FactoryBot.attributes_for(:doing_log, 
+                    title: "New doing_log title")
+                delete :destroy, params: { id: @doing_log.id }
+                expext(response).to redirect_to "/users/sign_in"
+            end
+
+            it "302レスポンス" do
+                doing_log_params = FactoryBot.attributes_for(:doing_log, 
+                    title: "New doing_log title")
+                delete :destroy, params: { id: @doing_log.id }
+                expect(response).to have_htttp_status "302"
+            end
+
+            it "doing_logの削除不可" do
+                expect {delete :destroy, params: { id: @doing_log.id }}.to_not change(DoingLog, :count)
             end
         end
     end
