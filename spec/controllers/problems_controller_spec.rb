@@ -40,4 +40,47 @@ RSpec.describe ProblemsController, type: :controller do
             end
         end
     end
+
+    describe "#update" do
+        context "ログイン済みユーザーでの応答" do
+            before do
+                @user = FactoryBot.create(:user)
+                @problem = FactoryBot.create(:problem, user: @user)
+            end
+
+            it "problemの更新" do
+                problem_params = FactoryBot.attributes_for(:problem, 
+                    title: "Updated problem title")
+                sign_in @user
+                patch :update, params: { id: @problem.id, 
+                    problem: problem_params }
+                expect(@problem.reload.title).to eq "Updated problem title"
+            end
+        end
+
+        context "作成者以外のユーザーでの応答" do
+            before do
+                @user = FactoryBot.create(:user)
+                other_user = FactoryBot.create(:user)
+                @problem = FactoryBot.create(:problem, user: other_user, 
+                    title: "Other's")
+            end
+            it "problemの更新不可" do
+                problem_params = FactoryBot.attributes_for(:problem, 
+                    title: "New problem title")
+                sign_in @user
+                patch :update, params: { id: @problem.id, 
+                    problem: problem_params }
+                expect(@problem.reload.title).to eq "New problem title"
+            end
+
+            it "ルートにリダイレクトすること" do
+                problem_params = FactoryBot.attributes_for(:problem)
+                sign_in @user
+                patch :update, params: { id: @problem.id, 
+                    problem: problem_params }
+                expect(response).to redirect_to root_path
+            end
+        end
+    end
 end
