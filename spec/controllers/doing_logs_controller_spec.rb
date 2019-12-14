@@ -197,4 +197,40 @@ RSpec.describe DoingLogsController, type: :controller do
             end
         end
     end
+
+    describe "#create" do
+        context "ログイン済みユーザーでの応答" do
+            before do
+                @user = FactoryBot.create(:user)
+            end
+
+            context "パラメータが有効な属性である場合" do
+                it "doing_logの追加に成功" do
+                    doing_log_params = FactoryBot.attributes_for(:doing_log)
+                    sign_in @user
+                    expect { post :create, params: { doing_log: doing_log_params } }.to change(@user.doing_logs, :count).by(1)
+                end
+            end
+
+            context "パラメータが無効な属性である場合" do
+                it "doing_logの追加に失敗" do
+                    doing_log_params = FactoryBot.attributes_for(:doing_log, :invalid)
+                    sign_in @user
+                    expect { post :create, params: { doing_log: doing_log_params } }.to_not change(@user.doing_logs, :count)
+                end
+            end
+        end
+
+        context "ログイン無しの場合の応答" do
+            it "サインインページへのリダイレクト" do
+                doing_log_params = FactoryBot.attributes_for(:doing_log)
+                expect { post :create, params: { doing_log: doing_log_params } }.to redirect_to "/users/sign_in"
+            end
+
+            it "doing_logの追加に失敗" do
+                doing_log_params = FactoryBot.attributes_for(:doing_log)
+                expect { post :create, params: { doing_log: doing_log_params } }.to_not change(DoingLog, :count)
+            end
+        end
+    end
 end
