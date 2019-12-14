@@ -165,4 +165,40 @@ RSpec.describe TriesController, type: :controller do
             end
         end
     end
+
+    describe "#create" do
+        context "ログイン済みユーザーでの応答" do
+            before do
+                @user = FactoryBot.create(:user)
+            end
+
+            context "パラメータが有効な属性である場合" do
+                it "tryの追加に成功" do
+                    try_params = FactoryBot.attributes_for(:try)
+                    sign_in @user
+                    expect { post :create, params: { try: try_params } }.to change(@user.tries, :count).by(1)
+                end
+            end
+
+            context "パラメータが無効な属性である場合" do
+                it "tryの追加に失敗" do
+                    try_params = FactoryBot.attributes_for(:try, :invalid)
+                    sign_in @user
+                    expect { post :create, params: { try: try_params } }.to_not change(@user.tries, :count)
+                end
+            end
+        end
+
+        context "ログイン無しの場合の応答" do
+            it "サインインページへのリダイレクト" do
+                try_params = FactoryBot.attributes_for(:try)
+                expect { post :create, params: { try: try_params } }.to redirect_to "/users/sign_in"
+            end
+
+            it "tryの追加に失敗" do
+                try_params = FactoryBot.attributes_for(:try)
+                expect { post :create, params: { try: try_params } }.to_not change(Try, :count)
+            end
+        end
+    end
 end
