@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -18,10 +20,10 @@ module RailsOnlyForDoingLog
 
     config.generators do |g|
       g.test_framework :rspec,
-      # fixtures: false,
-      view_specs: false,
-      helpers_specs: false,
-      routing_specs: false
+                       # fixtures: false,
+                       view_specs: false,
+                       helpers_specs: false,
+                       routing_specs: false
     end
   end
 end

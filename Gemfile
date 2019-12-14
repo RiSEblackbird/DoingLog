@@ -22,7 +22,7 @@ gem 'kaminari'
 gem 'mysql2', '>= 0.4.4'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection'
 gem 'puma', '~> 3.12'
 gem 'puma', '~> 3.12'
 gem 'rails', '~> 6.0.0'
@@ -36,14 +36,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_bot_rails'
-  gem 'pry-byebug'
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
+  gem 'factory_bot_rails'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  
 end
 
 group :development do
@@ -51,8 +50,8 @@ group :development do
   gem 'meta_request'
   gem 'rubocop'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
   gem 'web-console', '>= 3.3.0'
 end
