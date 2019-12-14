@@ -165,4 +165,40 @@ RSpec.describe ProblemsController, type: :controller do
             end
         end
     end
+
+    describe "#create" do
+        context "ログイン済みユーザーでの応答" do
+            before do
+                @user = FactoryBot.create(:user)
+            end
+
+            context "パラメータが有効な属性である場合" do
+                it "problemの追加に成功" do
+                    problem_params = FactoryBot.attributes_for(:problem)
+                    sign_in @user
+                    expect { post :create, params: { problem: problem_params } }.to change(@user.problems, :count).by(1)
+                end
+            end
+
+            context "パラメータが無効な属性である場合" do
+                it "problemの追加に失敗" do
+                    problem_params = FactoryBot.attributes_for(:problem, :invalid)
+                    sign_in @user
+                    expect { post :create, params: { problem: problem_params } }.to_not change(@user.problems, :count)
+                end
+            end
+        end
+
+        context "ログイン無しの場合の応答" do
+            it "サインインページへのリダイレクト" do
+                problem_params = FactoryBot.attributes_for(:problem)
+                expect { post :create, params: { problem: problem_params } }.to redirect_to "/users/sign_in"
+            end
+
+            it "problemの追加に失敗" do
+                problem_params = FactoryBot.attributes_for(:problem)
+                expect { post :create, params: { problem: problem_params } }.to_not change(Problem, :count)
+            end
+        end
+    end
 end
