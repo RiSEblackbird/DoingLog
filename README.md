@@ -57,6 +57,8 @@
   - Heroku
 - TEST
   - RSpec
+- LINTER
+  - RuboCop
 - FRONT
   - Bootstrap4
 - DEBUG
