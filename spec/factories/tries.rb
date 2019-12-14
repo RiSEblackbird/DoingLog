@@ -5,5 +5,9 @@ FactoryBot.define do
     effective true
     association :user
     association :problem
+
+    trait :invalid do
+      title nil
+    end
   end
 end

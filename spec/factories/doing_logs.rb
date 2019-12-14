@@ -3,5 +3,9 @@ FactoryBot.define do
     title Faker::Base.regexify("[doinglogふぃ56]{100}")
     summary Faker::Base.regexify("[doinglogぃ57おさ]{1000}")
     association :user
+
+    trait :invalid do
+      title nil
+    end
   end
 end

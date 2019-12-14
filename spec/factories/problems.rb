@@ -5,5 +5,9 @@ FactoryBot.define do
     solved true
     association :user
     association :doing_log
+
+    trait :invalid do
+      title nil
+    end
   end
 end
