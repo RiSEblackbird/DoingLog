@@ -70,4 +70,8 @@ RSpec.configure do |config|
 
   # Devise提供のログイン検証用のヘルパーを適用
   config.include Devise::Test::ControllerHelpers, type: :controller
+
+  config.include RequestSpecHelper, type: :request
+
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end
