@@ -19,4 +19,5 @@ RSpec.feature "DoingLogDeletes", type: :feature do
       page.accept_alert
       expect(page).to have_content "削除しました。"
     }.to change(user.doing_logs, :count).by(-1)
+  end
 end
