@@ -190,31 +190,37 @@ definitions:
 
 - 全般  
 - Rails
-  - **[Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)**
-  - **[gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)**  
+  - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
+  - [gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)
 
   - Devise
-    - **[[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)**
-    - **[deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)**
+    - [[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)
+    - [deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)
       - $ rails g devise UserでUserテーブルが"作成"ではなく"変更"としてマイグレーションファイルに記載されてしまう事象への対処。
 
   - ActsAsTaggableOn
-    - **[Railsでacts-as-taggable-onを使ってタグ管理を行う](https://ruby-rails.hatenadiary.com/entry/20150225/1424858414)**
+    - [Railsでacts-as-taggable-onを使ってタグ管理を行う](https://ruby-rails.hatenadiary.com/entry/20150225/1424858414)
       - 扱い方をまとめてくれている。
 
-- RSpec
-  - **書籍：[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)**
-  - **[ruby – RSpecマッチャーを複数行に分割](https://codeday.me/jp/qa/20190727/1315872.html)**
-    - expect後ろの改行について expect(...).to include
-  - **[stackoverflow - サンプルデータにセットするための、一定の長さのランダムな文字列を生成するための簡単な方法](https://ja.stackoverflow.com/questions/4687/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AB%E3%82%BB%E3%83%83%E3%83%88%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE-%E4%B8%80%E5%AE%9A%E3%81%AE%E9%95%B7%E3%81%95%E3%81%AE%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%81%AA%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E6%96%B9%E6%B3%95)**
-    - 文字数のバリデーションをテストしたく、手っ取り早く任意の文字数の文字列を生成したかった。今回はgem fakerを採用する。
+  - RSpec
+    - 書籍：[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)
+    - [ruby – RSpecマッチャーを複数行に分割](https://codeday.me/jp/qa/20190727/1315872.html)
+      - expect後ろの改行について expect(...).to include
+    - [stackoverflow - サンプルデータにセットするための、一定の長さのランダムな文字列を生成するための簡単な方法](https://ja.stackoverflow.com/questions/4687/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AB%E3%82%BB%E3%83%83%E3%83%88%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE-%E4%B8%80%E5%AE%9A%E3%81%AE%E9%95%B7%E3%81%95%E3%81%AE%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%81%AA%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E6%96%B9%E6%B3%95)
+      - 文字数のバリデーションをテストしたく、手っ取り早く任意の文字数の文字列を生成したかった。今回はgem fakerを採用する。
+    - Capybara
+      - [RSpecでブラウザのダイアログを操作する方法](http://kazukiyunoue-tech.hatenablog.com/entry/2018/06/13/134506)
+        - 投稿物などの削除の際に表示されるダイアログの操作をテストする方法
+      - 公式：[Method: Capybara::Session#accept_alert](https://www.rubydoc.info/github/jnicklas/capybara/master/Capybara%2FSession:accept_alert)
+
 
 - DB  
-  - **[mysql2 gemインストール時のトラブルシュート](https://qiita.com/HrsUed/items/ca2e0aee6a2402571cf6)**  
-  - **[Railsでmysql2がインストールできない](https://qiita.com/Yutazon/items/8d1e538b8c89fc7bda3c)**  
+  - [mysql2 gemインストール時のトラブルシュート](https://qiita.com/HrsUed/items/ca2e0aee6a2402571cf6)
+  - [Railsでmysql2がインストールできない](https://qiita.com/Yutazon/items/8d1e538b8c89fc7bda3c)
 
 ## 本リポジトリについて覚書
-既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。ポートフォリオというよりは個人での実用を意識しているので、動く様子を早く見たい。  
+既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。  
+ポートフォリオというよりは個人での実用を意識しているので、動く様子を早く見たい。  
   
 もし本アプリがうまく作れれば、上記リポジトリに着手するかもしれない。(活動スケジュール次第)  
 初期のGemセッティングは2019/11/27時点のDoingLogを踏襲。
