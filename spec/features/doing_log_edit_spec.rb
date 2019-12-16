@@ -16,7 +16,6 @@ RSpec.feature "DoingLogEdits", type: :feature do
     expect {
       click_link "/doing_logs/#{doing_log.id}"
       click_link "編集"
-      click_link "Swaggerの使用方法の学習"
       fill_in "取り組みタイトル", with: "目玉焼きの改良"
       fill_in "概要", with: "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
       click_button "編集を登録する"
