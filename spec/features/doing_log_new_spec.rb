@@ -4,12 +4,7 @@ RSpec.feature "DoingLogNews", type: :feature do
   scenario "DoingLogの新規投稿" do
     user = FactoryBot.create(:user)
 
-    visit root_path
-    click_link "サインイン"
-    fill_in "ユーザー名", with: user.username
-    fill_in "Eメール", with: user.email
-    fill_in "password", with: user.password
-    click_button "ログイン"
+    sign_in_as user
 
     expect {
       click_link "新規DoingLog"

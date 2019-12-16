@@ -5,6 +5,7 @@ RSpec.feature "DoingLogShows", type: :feature do
     user = FactoryBot.create(:user)
     doing_log = FactoryBot.create(:doing_log, title: "Swaggerの使用方法の学習",
       summary: "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。", user: user)
+      
     sign_in_as user
 
     expect {
