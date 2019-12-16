@@ -149,8 +149,6 @@ RSpec.describe DoingLogsController, type: :controller do
       end
 
       it 'doing_logの削除' do
-        doing_log_params = FactoryBot.attributes_for(:doing_log,
-                                                     title: 'Updated doing_log title')
         sign_in @user
         expect { delete :destroy, params: { id: @doing_log.id } }.to change(@user.doing_logs, :count).by(-1)
       end
@@ -181,15 +179,11 @@ RSpec.describe DoingLogsController, type: :controller do
       end
 
       it 'サインインページへのリダイレクト' do
-        doing_log_params = FactoryBot.attributes_for(:doing_log,
-                                                     title: 'New doing_log title')
         delete :destroy, params: { id: @doing_log.id }
         expext(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス' do
-        doing_log_params = FactoryBot.attributes_for(:doing_log,
-                                                     title: 'New doing_log title')
         delete :destroy, params: { id: @doing_log.id }
         expect(response).to have_htttp_status '302'
       end
