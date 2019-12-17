@@ -17,7 +17,7 @@ RSpec.feature "ProblemNews", type: :feature do
       click_link "Problemの追加"
       fill_in "問題タイトル", with: "日中の室内照度不足"
       fill_in "概要", with: "部屋がビルの陰に位置するため、自然光による照度が確保できない。"
-      click_button "投稿する"
+      click_button "登録する"
 
       expect(page).to have_content "新しいProblemが投稿されました！"
       expect(page).to have_content "日中の室内照度不足"
