@@ -11,7 +11,6 @@ RSpec.feature "DoingLogShows", type: :feature do
     expect {
       click_link "/doing_logs/#{doing_log.id}"
 
-      expect(page).to have_content "DoingLogの編集が完了しました。"
       expect(page).to have_content "Swaggerの使用方法の学習"
       expect(page).to have_content "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。"
       expect(page).to have_content "User: #{user.username}"
