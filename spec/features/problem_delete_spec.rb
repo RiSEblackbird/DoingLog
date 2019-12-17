@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "ProblemDeletes", type: :feature do
-  scenario "ある特定のDoingLogの削除完了まで" do
+  scenario "ある特定のProblemの削除完了まで" do
     user = FactoryBot.create(:user)
     problem = FactoryBot.create(:problem, title: "×実装時の○○エラー",
       summary: "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。", user: user)
