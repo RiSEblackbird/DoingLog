@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "ProblemNews", type: :feature do
-  user = FactoryBot.create(:user)
-  doing_log = FactoryBot.create(:doing_log, title: "住環境の改善活動",
-    summary: "劣悪な生活環境を総合的に見直す。", user: user)
+  scenario "DoingLog詳細にてProblemの新規追加完了まで" do
+    user = FactoryBot.create(:user)
+    doing_log = FactoryBot.create(:doing_log, title: "住環境の改善活動",
+      summary: "劣悪な生活環境を総合的に見直す。", user: user)
 
     sign_in_as user
 
@@ -24,4 +25,5 @@ RSpec.feature "ProblemNews", type: :feature do
       expect(page).to have_content "部屋がビルの陰に位置するため、自然光による照度が確保できない。"
       expect(page).to have_content "User: #{user.username}"
     }.to change(user.problems, :count).by(1)
+  end
 end
