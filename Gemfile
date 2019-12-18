@@ -49,6 +49,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'meta_request'
   gem 'rubocop'
+  gem 'rubocop-performance'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
