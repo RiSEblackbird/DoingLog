@@ -1,8 +1,8 @@
-require:
-    - rubocop-performance
-    - rubocop-rails
+# require:
+#     - rubocop-performance
+#     - rubocop-rails
   
-  AllCops:
+AllCops:
     TargetRubyVersion: 2.5
     # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
     # to ignore them, so only the ones explicitly set in this file are enabled.
@@ -16,120 +16,120 @@ require:
       - 'actionmailbox/test/dummy/**/*'
       - 'actiontext/test/dummy/**/*'
       - '**/node_modules/**/*'
-  
-  Performance:
+      
+Performance:
     Exclude:
       - '**/test/**/*'
-  
-  # Prefer assert_not over assert !
-  Rails/AssertNot:
+      
+    # Prefer assert_not over assert !
+Rails/AssertNot:
     Include:
-      - '**/test/**/*'
-  
-  # Prefer assert_not_x over refute_x
-  Rails/RefuteMethods:
+     - '**/test/**/*'
+      
+# Prefer assert_not_x over refute_x
+Rails/RefuteMethods:
     Include:
-      - '**/test/**/*'
-  
-  # Prefer &&/|| over and/or.
-  Style/AndOr:
+     - '**/test/**/*'
+      
+# Prefer &&/|| over and/or.
+Style/AndOr:
     Enabled: true
-  
-  # Align `when` with `case`.
-  Layout/CaseIndentation:
+      
+# Align `when` with `case`.
+Layout/CaseIndentation:
+   Enabled: true
+      
+Layout/ClosingHeredocIndentation:
     Enabled: true
-  
-  Layout/ClosingHeredocIndentation:
+      
+# Align comments with method definitions.
+Layout/CommentIndentation:
     Enabled: true
-  
-  # Align comments with method definitions.
-  Layout/CommentIndentation:
+      
+Layout/ElseAlignment:
     Enabled: true
-  
-  Layout/ElseAlignment:
-    Enabled: true
-  
-  # Align `end` with the matching keyword or starting expression except for
-  # assignments, where it should be aligned with the LHS.
-  Layout/EndAlignment:
+      
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
+Layout/EndAlignment:
     Enabled: true
     EnforcedStyleAlignWith: variable
     AutoCorrect: true
-  
-  Layout/EmptyLineAfterMagicComment:
+      
+Layout/EmptyLineAfterMagicComment:
     Enabled: true
-  
-  Layout/EmptyLinesAroundAccessModifier:
+      
+Layout/EmptyLinesAroundAccessModifier:
     Enabled: true
     EnforcedStyle: only_before
-  
-  Layout/EmptyLinesAroundBlockBody:
+      
+Layout/EmptyLinesAroundBlockBody:
     Enabled: true
-  
-  # In a regular class definition, no empty lines around the body.
-  Layout/EmptyLinesAroundClassBody:
+      
+# In a regular class definition, no empty lines around the body.
+Layout/EmptyLinesAroundClassBody:
     Enabled: true
-  
-  # In a regular method definition, no empty lines around the body.
-  Layout/EmptyLinesAroundMethodBody:
+      
+# In a regular method definition, no empty lines around the body.
+Layout/EmptyLinesAroundMethodBody:
+   Enabled: true
+      
+# In a regular module definition, no empty lines around the body.
+Layout/EmptyLinesAroundModuleBody:
     Enabled: true
-  
-  # In a regular module definition, no empty lines around the body.
-  Layout/EmptyLinesAroundModuleBody:
+      
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
     Enabled: true
-  
-  # Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
-  Style/HashSyntax:
+      
+Layout/FirstArgumentIndentation:
     Enabled: true
-  
-  Layout/FirstArgumentIndentation:
-    Enabled: true
-  
-  # Method definitions after `private` or `protected` isolated calls need one
-  # extra level of indentation.
-  Layout/IndentationConsistency:
+      
+# Method definitions after `private` or `protected` isolated calls need one
+# extra level of indentation.
+Layout/IndentationConsistency:
     Enabled: true
     EnforcedStyle: indented_internal_methods
-  
-  # Two spaces, no tabs (for indentation).
-  Layout/IndentationWidth:
+      
+# Two spaces, no tabs (for indentation).
+Layout/IndentationWidth:
     Enabled: true
-  
-  Layout/LeadingCommentSpace:
+      
+Layout/LeadingCommentSpace:
     Enabled: true
-  
-  Layout/SpaceAfterColon:
+      
+Layout/SpaceAfterColon:
+   Enabled: true
+      
+Layout/SpaceAfterComma:
     Enabled: true
-  
-  Layout/SpaceAfterComma:
+      
+Layout/SpaceAfterSemicolon:
     Enabled: true
-  
-  Layout/SpaceAfterSemicolon:
+      
+Layout/SpaceAroundEqualsInParameterDefault:
     Enabled: true
-  
-  Layout/SpaceAroundEqualsInParameterDefault:
+      
+Layout/SpaceAroundKeyword:
     Enabled: true
-  
-  Layout/SpaceAroundKeyword:
+      
+Layout/SpaceBeforeComma:
     Enabled: true
-  
-  Layout/SpaceBeforeComma:
+      
+Layout/SpaceBeforeComment:
     Enabled: true
-  
-  Layout/SpaceBeforeComment:
+      
+Layout/SpaceBeforeFirstArg:
     Enabled: true
-  
-  Layout/SpaceBeforeFirstArg:
+      
+Style/DefWithParentheses:
     Enabled: true
-  
-  Style/DefWithParentheses:
+      
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
     Enabled: true
-  
-  # Defining a method with parameters needs parentheses.
-  Style/MethodDefParentheses:
-    Enabled: true
-  
-  Style/FrozenStringLiteralComment:
+      
+Style/FrozenStringLiteralComment:
     Enabled: true
     EnforcedStyle: always
     Exclude:
@@ -141,113 +141,113 @@ require:
       - 'activestorage/db/update_migrate/**/*.rb'
       - 'actionmailbox/db/migrate/**/*.rb'
       - 'actiontext/db/migrate/**/*.rb'
-  
-  Style/RedundantFreeze:
+      
+Style/RedundantFreeze:
     Enabled: true
-  
-  # Use `foo {}` not `foo{}`.
-  Layout/SpaceBeforeBlockBraces:
+      
+# Use `foo {}` not `foo{}`.
+Layout/SpaceBeforeBlockBraces:
     Enabled: true
-  
-  # Use `foo { bar }` not `foo {bar}`.
-  Layout/SpaceInsideBlockBraces:
+      
+# Use `foo { bar }` not `foo {bar}`.
+Layout/SpaceInsideBlockBraces:
     Enabled: true
     EnforcedStyleForEmptyBraces: space
-  
-  # Use `{ a: 1 }` not `{a:1}`.
-  Layout/SpaceInsideHashLiteralBraces:
+      
+# Use `{ a: 1 }` not `{a:1}`.
+Layout/SpaceInsideHashLiteralBraces:
     Enabled: true
-  
-  Layout/SpaceInsideParens:
+      
+Layout/SpaceInsideParens:
     Enabled: true
-  
-  # Check quotes usage according to lint rule below.
-  Style/StringLiterals:
+      
+# Check quotes usage according to lint rule below.
+Style/StringLiterals:
     Enabled: true
     EnforcedStyle: double_quotes
-  
-  # Detect hard tabs, no hard tabs.
-  Layout/Tab:
+      
+# Detect hard tabs, no hard tabs.
+Layout/Tab:
     Enabled: true
-  
-  # Empty lines should not have any spaces.
-  Layout/TrailingEmptyLines:
+      
+# Empty lines should not have any spaces.
+Layout/TrailingEmptyLines:
     Enabled: true
-  
-  # No trailing whitespace.
-  Layout/TrailingWhitespace:
+      
+# No trailing whitespace.
+Layout/TrailingWhitespace:
     Enabled: true
-  
-  # Use quotes for string literals when they are enough.
-  Style/RedundantPercentQ:
+      
+# Use quotes for string literals when they are enough.
+Style/RedundantPercentQ:
     Enabled: true
-  
-  Lint/AmbiguousOperator:
+      
+Lint/AmbiguousOperator:
     Enabled: true
-  
-  Lint/AmbiguousRegexpLiteral:
+      
+Lint/AmbiguousRegexpLiteral:
     Enabled: true
-  
-  Lint/ErbNewArguments:
+      
+Lint/ErbNewArguments:
     Enabled: true
-  
-  # Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
-  Lint/RequireParentheses:
+      
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
     Enabled: true
-  
-  Lint/ShadowingOuterLocalVariable:
+      
+Lint/ShadowingOuterLocalVariable:
     Enabled: true
-  
-  Lint/RedundantStringCoercion:
+      
+Lint/RedundantStringCoercion:
     Enabled: true
-  
-  Lint/UriEscapeUnescape:
+      
+Lint/UriEscapeUnescape:
     Enabled: true
-  
-  Lint/UselessAssignment:
+      
+Lint/UselessAssignment:
     Enabled: true
-  
-  Lint/DeprecatedClassMethods:
+      
+Lint/DeprecatedClassMethods:
     Enabled: true
-  
-  Style/ParenthesesAroundCondition:
+      
+Style/ParenthesesAroundCondition:
     Enabled: true
-  
-  Style/RedundantBegin:
+      
+Style/RedundantBegin:
     Enabled: true
-  
-  Style/RedundantReturn:
+      
+Style/RedundantReturn:
     Enabled: true
     AllowMultipleReturnValues: true
-  
-  Style/Semicolon:
+      
+Style/Semicolon:
     Enabled: true
     AllowAsExpressionSeparator: true
-  
-  # Prefer Foo.method over Foo::method
-  Style/ColonMethodCall:
+      
+# Prefer Foo.method over Foo::method
+Style/ColonMethodCall:
     Enabled: true
-  
-  Style/TrivialAccessors:
+      
+Style/TrivialAccessors:
     Enabled: true
-  
-  Performance/FlatMap:
+      
+Performance/FlatMap:
+   Enabled: true
+      
+Performance/RedundantMerge:
     Enabled: true
-  
-  Performance/RedundantMerge:
+      
+Performance/StartWith:
     Enabled: true
-  
-  Performance/StartWith:
+      
+Performance/EndWith:
     Enabled: true
-  
-  Performance/EndWith:
+      
+Performance/RegexpMatch:
     Enabled: true
-  
-  Performance/RegexpMatch:
+      
+Performance/ReverseEach:
     Enabled: true
-  
-  Performance/ReverseEach:
-    Enabled: true
-  
-  Performance/UnfreezeString:
+      
+Performance/UnfreezeString:
     Enabled: true
