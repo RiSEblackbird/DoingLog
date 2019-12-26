@@ -189,6 +189,15 @@ definitions:
 ## Reference articles
 
 - 全般  
+
+- Docker
+  - [SO - You must use Bundler 2 or greater with this lockfile. When running docker-compose up locally](https://stackoverflow.com/questions/55909543/you-must-use-bundler-2-or-greater-with-this-lockfile-when-running-docker-compos)
+    - bundlerのバージョン不適合、$ docker-compose up　⇨　"bundle install"失敗。  
+      Dockerfileに"RUN gem install bundler -v 2.0.1"を追記して解消。  
+  - [Docker上でrails/webpackerなアプリケーションの開発用DockerfileではNODE_ENVを明示的にdevelopmentに指定してyarn installしよう](https://qiita.com/bananaumai/items/34e355a0fd25c3dd0185)
+    - $ docker-compose run web rake db:create でyarnのチェックを促されてエラーとなる事象への対処。
+      Dockerfileに"RUN NODE_ENV=development yarn install"を追記して
+
 - Rails
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
   - [gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)
@@ -212,7 +221,6 @@ definitions:
       - [RSpecでブラウザのダイアログを操作する方法](http://kazukiyunoue-tech.hatenablog.com/entry/2018/06/13/134506)
         - 投稿物などの削除の際に表示されるダイアログの操作をテストする方法
       - 公式：[Method: Capybara::Session#accept_alert](https://www.rubydoc.info/github/jnicklas/capybara/master/Capybara%2FSession:accept_alert)
-
 
 - DB  
   - [mysql2 gemインストール時のトラブルシュート](https://qiita.com/HrsUed/items/ca2e0aee6a2402571cf6)

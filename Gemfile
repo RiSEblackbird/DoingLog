@@ -24,7 +24,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'puma', '~> 3.12'
-gem 'puma', '~> 3.12'
 gem 'rails', '~> 6.0.0'
 gem 'rename'
 gem 'sass-rails', '~> 5'
@@ -42,7 +41,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 4.0'
 end
 
 group :development do
@@ -53,7 +52,6 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
   gem 'web-console', '>= 3.3.0'
 end
 
