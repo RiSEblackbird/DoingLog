@@ -19,7 +19,7 @@ services:
       - "8080:8080"
 
   web:
-    container_name: practice_web
+    container_name: DoingLog
     build: .
     command: rails s -p 3000 -b '0.0.0.0' && bundle exec puma -C config/puma.rb
     volumes:
@@ -32,13 +32,13 @@ services:
     links:
       - db
 
-  nginx:
-    container_name: practice_nginx
-    build: ./containers/nginx
-    volumes:
-      - ./public:/practice/public
-      - ./tmp:/practice/tmp
-    ports:
-      - "80:80"
-    depends_on:
-      - web
+  # nginx:
+  #   container_name: practice_nginx
+  #   build: ./containers/nginx
+  #   volumes:
+  #     - ./public:/practice/public
+  #     - ./tmp:/practice/tmp
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - web
