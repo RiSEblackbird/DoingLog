@@ -187,9 +187,10 @@ definitions:
 ```
 
 ## Reference articles
-
+2019.12.27記 調べたきっかけも記載するように！
 - 全般  
-
+  - [Docker × Ruby on Rails × MySQLの環境構築](https://qiita.com/tatsuo-iriyama/items/0bf3b08de03280314c91)
+    - 調べたきっかけ：Dockerの準備始めた時にMysqlの準備をしていなかったことに気づいた。
 - Docker
   - [SO - You must use Bundler 2 or greater with this lockfile. When running docker-compose up locally](https://stackoverflow.com/questions/55909543/you-must-use-bundler-2-or-greater-with-this-lockfile-when-running-docker-compos)
     - bundlerのバージョン不適合、$ docker-compose up　⇨　"bundle install"失敗。  
@@ -197,6 +198,11 @@ definitions:
   - [Docker上でrails/webpackerなアプリケーションの開発用DockerfileではNODE_ENVを明示的にdevelopmentに指定してyarn installしよう](https://qiita.com/bananaumai/items/34e355a0fd25c3dd0185)
     - $ docker-compose run web rake db:create でyarnのチェックを促されてエラーとなる事象への対処。
       Dockerfileに"RUN NODE_ENV=development yarn install"を追記して
+  - [【docker】mysqlのイメージを取得し起動](https://se-tomo.com/2019/09/23/%E3%80%90docker%E3%80%91mysql%E3%81%AE%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%92%E5%8F%96%E5%BE%97%E3%81%97%E8%B5%B7%E5%8B%95/)
+    - Mysqlイメージの導入から起動までの一連の流れを参照
+  - [Use volumes](https://docs.docker.com/storage/volumes/)
+    - Dockerでのdb永続化について
+    - 関連質問：[Where is a mysql volume db-data:/var/lib/mysql/data stored?](https://stackoverflow.com/questions/58090668/where-is-a-mysql-volume-db-data-var-lib-mysql-data-stored)
 
 - Rails
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
@@ -229,6 +235,11 @@ definitions:
 - DB  
   - [mysql2 gemインストール時のトラブルシュート](https://qiita.com/HrsUed/items/ca2e0aee6a2402571cf6)
   - [Railsでmysql2がインストールできない](https://qiita.com/Yutazon/items/8d1e538b8c89fc7bda3c)
+  - [Cannot load `Rails.application.database_configuration`: (NoMethodError) with launching to Heroku](https://stackoverflow.com/questions/41905756/cannot-load-rails-application-database-configuration-nomethoderror-with-lau/41913290)
+    - config/database.yml内の参照の仕組み。
+    - 調べたきっかけ：$ docker-compose run web bundle exec rails g rspec:feature problem_edit 失敗時の
+      (erb):31:in `<main>': Cannot load database configuration:  
+      undefined method `[]' for nil:NilClass (NoMethodError)
 
 ## 本リポジトリについて覚書
 既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。  

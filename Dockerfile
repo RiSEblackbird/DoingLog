@@ -10,13 +10,16 @@ apt-get update && apt-get install -y yarn
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
 apt-get install nodejs
 
-RUN mkdir /docker-rails-practice
-ENV APP_ROOT /app_name 
+# RUN NODE_ENV=development yarn install
+
+RUN mkdir /DoingLog
+ENV APP_ROOT /DoingLog
 WORKDIR $APP_ROOT
 
 ADD ./Gemfile $APP_ROOT/Gemfile
 ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
+RUN gem install bundler -v 2.0.1
 RUN bundle install
 ADD . $APP_ROOT
 

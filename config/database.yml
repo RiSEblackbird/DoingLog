@@ -12,26 +12,23 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   username: root
   password: tis193
   host: db
 
 development:
   <<: *default
-  database: docker-rails-practice-dev
-  username: azarashi
-  password: tis193
+  database: doinglog-dev
 
 production:
   <<: *default
-  database: docker-rails-practice
-  username: azarashi
-  password: <%= ENV['DOCKER_DATABASE_PASSWORD'] %>
-  # host: <%= Rails.application.credentials.rds[:host] %>
-  # database: <%= Rails.application.credentials.rds[:database] %>
-  # username: <%= Rails.application.credentials.rds[:username] %>
-  # password: <%= Rails.application.credentials.rds[:password] %>
+  database: doinglog-pro
+
+# host: <%= Rails.application.credentials.rds[:host] %>
+# database: <%= Rails.application.credentials.rds[:database] %>
+# username: <%= Rails.application.credentials.rds[:username] %>
+# password: <%= Rails.application.credentials.rds[:password] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -39,7 +36,7 @@ production:
 
 test:
   <<: *default
-  database: app_name_test
+  database: doinglog-test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

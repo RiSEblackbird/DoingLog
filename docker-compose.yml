@@ -1,36 +1,38 @@
 version: '3'
 services:
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     environment:
+      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: tis193
-      MYSQL_DATABASE: docker-rails-practice
-      MYSQL_USER: azarashi
-      MYSQL_PASSWORD: tis193
+    # volumes: 
+    #   - db-data:/var/lib/mysql/data
     ports:
       - "3306:3306"
 
-  webpacker:
-    build: .
-    command: bundle exec bin/webpack-dev-server
-    volumes:
-      - .:/hoge_project
-    ports:
-      - "8080:8080"
+#  webpacker:
+#    build: .
+#    command: bundle exec bin/webpack-dev-server
+#    volumes:
+#      - .:/DoingLog_project
+#    ports:
+#      - "8080:8080"
 
   web:
     container_name: DoingLog
     build: .
-    command: rails s -p 3000 -b '0.0.0.0' && bundle exec puma -C config/puma.rb
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    # command: rails s -p 3000 -b '0.0.0.0' && bundle exec puma -C config/puma.rb
     volumes:
-      - .:/practice
-      - ./public:/practice/public
-      - ./tmp:/practice/tmp
-      - ./log:/practice/log
+      - .:/DoingLog
+      - ./public:/DoingLog/public
+      - ./tmp:/DoingLog/tmp
+      - ./log:/DoingLog/log
     ports:
       - "3000:3000"
-    links:
+    depends_on:
       - db
+      # - webpacker
 
   # nginx:
   #   container_name: practice_nginx
@@ -42,3 +44,9 @@ services:
   #     - "80:80"
   #   depends_on:
   #     - web
+
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
