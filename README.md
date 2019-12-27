@@ -224,6 +224,10 @@ definitions:
             Webpacker requires Node.js >= 8.16.0 and you are using 4.8.2
             Please upgrade Node.js https://nodejs.org/en/download/
         - やり直し1227前のDockerfileからyarn, nodeインストール用の設定を引用して解消
+    - 初期構成での$ docker-compose run web rake db:create　成功(1228未明)
+      - Starting railsonlyfordoinglog_db_1 ... done
+        Created database 'DoingLog_development'
+        Created database 'DoingLog_test'
 
   - Devise
     - [[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)
