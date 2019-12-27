@@ -14,3 +14,8 @@ services:
       - "3000:3000"
     depends_on:
       - db
+
+  mysql:
+    image: "mysql:8.0"
+    volumes:
+      - ./mysql-confd:/etc/mysql/conf.d

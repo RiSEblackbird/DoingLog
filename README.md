@@ -203,6 +203,11 @@ definitions:
   - [Use volumes](https://docs.docker.com/storage/volumes/)
     - Dockerでのdb永続化について
     - 関連質問：[Where is a mysql volume db-data:/var/lib/mysql/data stored?](https://stackoverflow.com/questions/58090668/where-is-a-mysql-volume-db-data-var-lib-mysql-data-stored)
+  - [Docker で MySQL 8.0.4 を使う](https://qiita.com/yensaki/items/9e453b7320ca2d0461c7)
+    - $ docker-compose run web rake db:create
+    - Couldn't create 'DoingLog_development' database. Please check your configuration.
+      rake aborted!
+      Mysql2::Error: Authentication plugin 'caching_sha2_password' cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory
 
 - Rails
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
