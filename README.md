@@ -192,6 +192,7 @@ definitions:
   - [Docker × Ruby on Rails × MySQLの環境構築](https://qiita.com/tatsuo-iriyama/items/0bf3b08de03280314c91)
     - 調べたきっかけ：Dockerの準備始めた時にMysqlの準備をしていなかったことに気づいた。
 - Docker
+  - [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
   - [SO - You must use Bundler 2 or greater with this lockfile. When running docker-compose up locally](https://stackoverflow.com/questions/55909543/you-must-use-bundler-2-or-greater-with-this-lockfile-when-running-docker-compos)
     - bundlerのバージョン不適合、$ docker-compose up　⇨　"bundle install"失敗。  
       Dockerfileに"RUN gem install bundler -v 2.0.1"を追記して解消。  
@@ -213,6 +214,16 @@ definitions:
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
   - [gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)
   - [Selenium [DEPRECATION] Selenium::WebDriver::Chrome#driver_path= is deprecated が出る件](https://blog.tamesuu.com/2019/06/08/274/)
+
+  - Rails "6"
+    - [Rails6 Webpackerでエラーが出た](https://qiita.com/libertyu/items/1eb74adc817ab8971100)
+      - 初回および、やり直し1227初期での$ docker-compose up にて.
+        - web_1  | /usr/local/bundle/gems/webpacker-4.2.2/lib/webpacker/configuration.rb:95:in `rescue in load': Webpacker configuration file not found /DoingLog/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ rb_sysopen - /DoingLog/config/webpacker.yml (RuntimeError)
+        - $ docker-compose run web rails webpacker:install
+          - sh: 1: node: not found
+            Webpacker requires Node.js >= 8.16.0 and you are using 4.8.2
+            Please upgrade Node.js https://nodejs.org/en/download/
+        - やり直し1227前のDockerfileからyarn, nodeインストール用の設定を引用して解消
 
   - Devise
     - [[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)
