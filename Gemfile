@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+gem 'acts-as-taggable-on', '~> 6.0'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'mysql2', '>= 0.4.4'
 gem 'puma', '~> 4.1'
