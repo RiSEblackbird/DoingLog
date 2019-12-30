@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       # Additional
       t.string :username,           default: ''
-      t.text :profile,              default: ''
+      t.text :profile
 
       ## Recoverable
       t.string   :reset_password_token

@@ -251,6 +251,17 @@ definitions:
     - 調べたきっかけ：$ docker-compose run web bundle exec rails g rspec:feature problem_edit 失敗時の
       (erb):31:in `<main>': Cannot load database configuration:  
       undefined method `[]' for nil:NilClass (NoMethodError)
+  - [MySQLでBLOB/TEXT型のカラムにはデフォルト値を設定できない](https://easyramble.com/blob-text-column-default-value-error.html)
+    - 記事タイトルまんま。下記エラー発生時の対処参考(※ 記事での環境はPHP - CakePHP)
+    - Docker構成前まではDBがSqlite指定だったので特にエラーにならなかった。
+    - $ docker-compose run web rake db:migrate
+      Starting railsonlyfordoinglog_db_1 ... done
+      == 20191127054530 DeviseCreateUsers: migrating ================================
+      -- create_table(:users)
+      rake aborted!
+      StandardError: An error has occurred, all later migrations canceled:
+
+Mysql2::Error: BLOB, TEXT, GEOMETRY or JSON column 'profile' can't have a default value
 
 ## 本リポジトリについて覚書
  ~~既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。~~  
