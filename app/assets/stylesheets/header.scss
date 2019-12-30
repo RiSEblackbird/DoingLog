@@ -1,0 +1,12 @@
+/* ヘッダー */
+#header-content {
+    z-index: 5;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    .header-menu {
+      background-color: #E5CCFF;
+      padding: 0 10px 0 10px;
+    }
+  }
