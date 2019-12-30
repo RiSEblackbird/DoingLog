@@ -66,12 +66,9 @@
   - better_errors
   - rails_panel
 
-## 追加Gem
+## その他の機能用Gem
 
 ```Gemfile
-# 機能追加用のGem抜粋
-# OAuthの実装は今回スキップする(2019/12/07記)
-
 # タグ付け機能
 gem 'acts-as-taggable-on', '~> 6.0'
 
@@ -86,12 +83,6 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-# 環境変数の管理
-gem 'dotenv-rails'
-
-# Googleアナリティクス(気が向いたら使う)
-gem 'google-analytics-rails'
-
 # ページネーション
 gem 'kaminari'
 
@@ -99,7 +90,7 @@ gem 'kaminari'
 
 ## Models
 
-```models detail
+```json
 // 下記はGem由来以外のもののみ
 // 書式はSwagger Editorのものを真似て書いただけ。
 
@@ -262,8 +253,9 @@ definitions:
       undefined method `[]' for nil:NilClass (NoMethodError)
 
 ## 本リポジトリについて覚書
-既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。  
-ポートフォリオというよりは個人での実用を意識しているので、動く様子を早く見たい。  
-  
-もし本アプリがうまく作れれば、上記リポジトリに着手するかもしれない。(活動スケジュール次第)  
-初期のGemセッティングは2019/11/27時点のDoingLogを踏襲。
+ ~~既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。~~ 
+~~ ポートフォリオというよりは個人での実用を意識しているので、動く様子を早く見たい。~~ 
+
+余裕があれば部分的なVueの適用を行う。
+ ~~もし本アプリがうまく作れれば、上記リポジトリに着手するかもしれない。(活動スケジュール次第)~~ 
+初期のGemセッティングは2019/11/27時点のDoingLogを ~~踏襲~~ 参考。
