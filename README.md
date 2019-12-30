@@ -228,6 +228,12 @@ definitions:
   - ActsAsTaggableOn
     - [Railsでacts-as-taggable-onを使ってタグ管理を行う](https://ruby-rails.hatenadiary.com/entry/20150225/1424858414)
       - 扱い方をまとめてくれている。
+    - [For MySql users](https://github.com/mbleigh/acts-as-taggable-on#for-mysql-users)
+      - Mysqlユーザー用の必要操作
+      - $ docker-compose run web rake acts_as_taggable_on_engine:tag_names:collate_bin
+        Starting railsonlyfordoinglog_db_1 ... done
+        -- execute("ALTER TABLE tags MODIFY name varchar(255) CHARACTER SET utf8 COLLATE utf8_bin;")
+        -> 0.0735s
 
   - RSpec
     - 書籍：[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)
