@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DoingLog</title>
+    <title>RailsOnlyForDoingLog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,33 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+
+    <div class="row" id="main-layout">
+      <div id="login-alert">
+        <% if notice %>
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">close</span>
+            </button>
+            <%= notice %>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">close</span>
+            </button>
+            <%= alert %>
+          </div>
+        <% end %>
+      </div>
+      <div class="p-0 col-2 col-lg-1 justify-self-center"><%= render 'layouts/sidebar' %></div>
+      <div class="p-2 col-10 col-lg-11" id="cards-space">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
