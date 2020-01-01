@@ -88,7 +88,7 @@ gem 'kaminari'
 
 ```
 
-## Models
+<details><summary>## Models</summary>
 
 ```json
 // 下記はGem由来以外のもののみ
@@ -176,6 +176,7 @@ definitions:
       updatedAt:
         type: "datetime"
 ```
+</details>
 
 ## Reference articles
 - 全般  
