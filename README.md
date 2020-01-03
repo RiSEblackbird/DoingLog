@@ -183,6 +183,9 @@ definitions:
   - [Docker × Ruby on Rails × MySQLの環境構築](https://qiita.com/tatsuo-iriyama/items/0bf3b08de03280314c91)
     - 調べたきっかけ：Dockerの準備始めた時にMysqlの準備をしていなかったことに気づいた。
   - [【Rails】GithubとCircleCIを連携してcommit時にrspecとrubocopを動かす](https://qiita.com/junara/items/a40bb231c405be7983f7)
+- CircleCI
+  - [https://circleci.com/docs/2.0/postgres-config/#example-mysql-project](https://circleci.com/docs/2.0/postgres-config/#example-mysql-project)
+
 - Docker
   - [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
   - [SO - You must use Bundler 2 or greater with this lockfile. When running docker-compose up locally](https://stackoverflow.com/questions/55909543/you-must-use-bundler-2-or-greater-with-this-lockfile-when-running-docker-compos)
