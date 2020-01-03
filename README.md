@@ -52,12 +52,16 @@
   - TriesTags
 
 ## 使用技術
-- BASE
+
+- CONTAINER
+  - Docker
+- CI/CD
+  - CircleCI
+- LANGUAGE & FRAMEWORK
   - ruby 2.5.3
   - rails 6.0.1
-  - SQLite (development)
-  - MySQL (production)
-  - Heroku
+- DB
+  - MySQL 8.0
 - TEST
   - RSpec
 - LINTER
