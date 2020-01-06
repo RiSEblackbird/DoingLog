@@ -7,11 +7,11 @@ jobs:
         environment:
           RAILS_ENV: test
       - image: circleci/mysql:8.0
-          environment:
-            MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: test_db
-            MYSQL_USER: user
-            MYSQL_PASSWORD: passw0rd
+        environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: user
+          MYSQL_PASSWORD: passw0rd
 
   steps:
     - checkout
