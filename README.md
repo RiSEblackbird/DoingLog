@@ -192,8 +192,11 @@ definitions:
   - [【Rails】GithubとCircleCIを連携してcommit時にrspecとrubocopを動かす](https://qiita.com/junara/items/a40bb231c405be7983f7)
 - CircleCI
   - [https://circleci.com/docs/2.0/postgres-config/#example-mysql-project](https://circleci.com/docs/2.0/postgres-config/#example-mysql-project)
+  - [Setting up CircleCI 2.0 for Rails](https://thoughtbot.com/blog/circleci-2-rails)
+    - Docker imageの説明が参考になった。
 
 - Docker
+  - [mysql Docker Official Images](https://hub.docker.com/_/mysql)
   - [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
   - [SO - You must use Bundler 2 or greater with this lockfile. When running docker-compose up locally](https://stackoverflow.com/questions/55909543/you-must-use-bundler-2-or-greater-with-this-lockfile-when-running-docker-compos)
     - bundlerのバージョン不適合、$ docker-compose up　⇨　"bundle install"失敗。  

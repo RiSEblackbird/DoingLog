@@ -1,11 +1,14 @@
 version: 2
 jobs:
     build:
+        working_directory: ~/circleci-rails-doing-log
         docker:
-            - image: circleci/php:7.1-apache-node-browsers # The primary container where steps are run
-            - image: circleci/mysql:8.0.4
+            - image: circleci/ruby:2.5.3-node-browsers-legacy
                 environment:
-                    MYSQL_ROOT_PASSWORD: rootpw
+                    RAILS_ENV: test
+            - image: circleci/mysql:8.0
+                environment:
+                    MYSQL_ROOT_PASSWORD: password
                     MYSQL_DATABASE: test_db
                     MYSQL_USER: user
                     MYSQL_PASSWORD: passw0rd
@@ -29,6 +32,12 @@ jobs:
                     sudo apt-get install default-mysql-client
                     mysql -h 127.0.0.1 -u user -ppassw0rd test_db < sql-data/dummy.sql
                     mysql -h 127.0.0.1 -u user -ppassw0rd --execute="SELECT * FROM test_db.Persons"
+            - run:
+                name: rubocop
+                command: docker-compose run web bundle exec rubocop
+            - run:
+                name: rspec
+                command: docker-compose run web bundle exec
 workflows:
     version: 2
     build-deploy:
