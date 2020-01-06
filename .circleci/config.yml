@@ -2,16 +2,16 @@ version: 2
 jobs:
   build:
     working_directory: ~/circleci-rails-doing-log
-      docker:
-        - image: circleci/ruby:2.5.3-node-browsers-legacy
+    docker:
+      - image: circleci/ruby:2.5.3-node-browsers-legacy
+        environment:
+          RAILS_ENV: test
+      - image: circleci/mysql:8.0
           environment:
-            RAILS_ENV: test
-        - image: circleci/mysql:8.0
-            environment:
-              MYSQL_ROOT_PASSWORD: password
-              MYSQL_DATABASE: test_db
-              MYSQL_USER: user
-              MYSQL_PASSWORD: passw0rd
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: test_db
+            MYSQL_USER: user
+            MYSQL_PASSWORD: passw0rd
 
   steps:
     - checkout
