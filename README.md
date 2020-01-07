@@ -243,6 +243,10 @@ definitions:
         Created database 'DoingLog_development'
         Created database 'DoingLog_test'
 
+  - Webdrivers
+    - [Failed to find Chrome binary with Rails 6 rc2 #148](https://github.com/titusfortner/webdrivers/issues/148)
+      - RSpecでSystem specを初めて走らす時に生じたエラー。
+
   - Devise
     - [[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)
     - [deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)
