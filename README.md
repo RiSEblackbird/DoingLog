@@ -218,6 +218,11 @@ definitions:
       Mysql2::Error: Authentication plugin 'caching_sha2_password' cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory
 
 - Rails
+  - [Railsガイド](https://railsguides.jp/)
+    - [Active Record の関連付け](https://railsguides.jp/association_basics.html)
+    - [validates :name, uniqueness: { case_sensitive: false }](https://railsguides.jp/active_record_validations.html#uniqueness)
+      - 一意性制約で大文字小文字を区別するかどうか
+
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
   - [gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)
   - [Selenium [DEPRECATION] Selenium::WebDriver::Chrome#driver_path= is deprecated が出る件](https://blog.tamesuu.com/2019/06/08/274/)
@@ -285,6 +290,7 @@ definitions:
       StandardError: An error has occurred, all later migrations canceled:
 
 ## 本リポジトリについて覚書
+
  ~~既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。~~  
 ~~ポートフォリオというよりは個人での実用を意識しているので、動く様子を早く見たい。~~ 
 
