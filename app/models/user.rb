@@ -11,7 +11,8 @@ class User < ApplicationRecord
   validates :username, presence: true,
                        length: { minimum: 2, maximum: 30, allow_blank: true },
                        uniqueness: { case_sensitive: false }
-  
-            :profile, length: { maximum: 150 }
-            :password, length: { maximum: 20 }
+    
+
+  validates :profile, length: { maximum: 150 }
+  validates :password, length: { maximum: 20 }
 end
