@@ -220,8 +220,10 @@ definitions:
 - Rails
   - [Railsガイド](https://railsguides.jp/)
     - [Active Record の関連付け](https://railsguides.jp/association_basics.html)
-    - [validates :name, uniqueness: { case_sensitive: false }](https://railsguides.jp/active_record_validations.html#uniqueness)
-      - 一意性制約で大文字小文字を区別するかどうか
+    - [Active Record バリデーション](https://railsguides.jp/active_record_validations.html)
+      - [validates :name, uniqueness: { case_sensitive: false }](https://railsguides.jp/active_record_validations.html#uniqueness)
+        - 一意性制約で大文字小文字を区別するかどうか
+      - [重複について 2.11 uniqueness](https://railsguides.jp/active_record_validations.html#uniqueness)
 
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
   - [gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)
