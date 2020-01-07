@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "TryIndices", type: :feature do
+RSpec.feature "TryIndices", type: :system do
   scenario "tryの一覧ページの表示まで" do
     user = FactoryBot.create(:user)
     another_user = FactoryBot.create(:user)

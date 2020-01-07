@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProblemIndices", type: :feature do
+RSpec.feature "ProblemIndices", type: :system do
   scenario "Problemの一覧ページの表示まで" do
     user = FactoryBot.create(:user)
     another_user = FactoryBot.create(:user)

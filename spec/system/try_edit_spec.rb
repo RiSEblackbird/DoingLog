@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "TryEdits", type: :feature do
+RSpec.feature "TryEdits", type: :system do
   scenario "ある特定のTryの編集完了まで" do
     user = FactoryBot.create(:user)
     try = FactoryBot.create(:try, title: "Godfab - Projectsによる更新履歴の分類",

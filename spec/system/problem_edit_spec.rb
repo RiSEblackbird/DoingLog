@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProblemEdits", type: :feature do
+RSpec.feature "ProblemEdits", type: :system do
   scenario "ある特定のproblemの編集完了まで" do
     user = FactoryBot.create(:user)
     problem = FactoryBot.create(:problem, title: "日中の室内照度不足",

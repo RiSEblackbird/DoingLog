@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "TryShows", type: :feature do
+RSpec.feature "TryShows", type: :system do
   scenario "Tryの詳細ページ表示まで" do
     user = FactoryBot.create(:user)
     doing_log = FactoryBot.create(:doing_log, title: "Swaggerの使用方法の学習",

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProblemDeletes", type: :feature do
+RSpec.feature "ProblemDeletes", type: :system do
   scenario "ある特定のProblemの削除完了まで" do
     user = FactoryBot.create(:user)
     problem = FactoryBot.create(:problem, title: "×実装時の○○エラー",

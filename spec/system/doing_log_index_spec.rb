@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "DoingLogIndices", type: :feature do
+RSpec.feature "DoingLogIndices", type: :system do
 
   scenario "DoingLogの一覧ページの表示まで" do
     user = FactoryBot.create(:user)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "TryNews", type: :feature do
+RSpec.feature "TryNews", type: :system do
   scenario "DoingLog詳細にてTryの新規追加完了まで" do
     user = FactoryBot.create(:user)
     doing_log = FactoryBot.create(:doing_log, title: "住環境の改善活動",
