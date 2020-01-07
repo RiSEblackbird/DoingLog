@@ -194,6 +194,8 @@ definitions:
   - [https://circleci.com/docs/2.0/postgres-config/#example-mysql-project](https://circleci.com/docs/2.0/postgres-config/#example-mysql-project)
   - [Setting up CircleCI 2.0 for Rails](https://thoughtbot.com/blog/circleci-2-rails)
     - Docker imageの説明が参考になった。
+  - [CircleCI の設定ファイルでハマったらローカルで Validate チェックしよう](https://qiita.com/zoe302/items/261fe8e781fe52a653d8)
+    - LoacalでCircleCIを実行する方法。
 
 - Docker
   - [mysql Docker Official Images](https://hub.docker.com/_/mysql)
