@@ -1,37 +1,36 @@
 version: 2
 jobs:
   test:
-    build:
-      docker:
-        - image: circleci/ruby:2.5.3-node-browsers-legacy
-          environment:
-            RAILS_ENV: test
-            DB_HOST: 127.0.0.1
-        - image: circleci/mysql:8.0
-          environment:
-            MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: test_db
-            MYSQL_USER: user
-            MYSQL_PASSWORD: tis193
-      working_directory: ~/circleci-rails-doing-log
+    docker:
+      - image: circleci/ruby:2.5.3-node-browsers-legacy
+        environment:
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
+      - image: circleci/mysql:8.0
+        environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: user
+          MYSQL_PASSWORD: tis193
+    working_directory: ~/circleci-rails-doing-log
 
-      steps:
-        - checkout
-        - restore_cache:
-          keys:
-            - v2-dependencies-{{ checksum "Gemfile.lock" }}
-            - v2-dependencies-
-        - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
-        - run: yarn install
-        - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
-        - run: bundle exec rake db:create
-        - run: bundle exec rake db:schema:load
-        - run:
-          name: Rspec
-          command: bundle exec rspec
+    steps:
+      - checkout
+      - restore_cache:
+        keys:
+          - v2-dependencies-{{ checksum "Gemfile.lock" }}
+          - v2-dependencies-
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run: yarn install
+      - save_cache:
+        paths:
+          - ./vendor/bundle
+        key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+      - run:
+        name: Rspec
+        command: bundle exec rspec
 
 workflows:
   version: 2
