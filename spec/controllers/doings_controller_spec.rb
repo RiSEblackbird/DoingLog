@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe DoingLogsController, type: :controller do
+RSpec.describe DoingsController, type: :controller do
   describe '#index' do
     before do
       @user = FactoryBot.create(:user)

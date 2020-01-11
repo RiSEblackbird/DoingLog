@@ -1,2 +1,2 @@
-module DoingLogsHelper
+module DoingsHelper
 end

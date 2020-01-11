@@ -1,4 +1,4 @@
-class DoingLogsController < ApplicationController
+class DoingsController < ApplicationController
   def index
     @doing_logs = DoingLog.all
   end
