@@ -2,7 +2,11 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  get 'home' => 'home/index'
-  root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'users/index'
+  get 'users/show'
+  root 'doing_logs#index'
+  get 'home' => 'doing_logs#index'
+
+  resources :users, only: %i[index show]
+  resources :doing_logs
 end

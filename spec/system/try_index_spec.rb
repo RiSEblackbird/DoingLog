@@ -21,3 +21,4 @@ RSpec.feature "TryIndices", type: :system do
       expect(page).to have_content "器で液体を摂取することは非常なる贅沢なので、コップの所有に対して月額の徴税を新たに実施する。"
     }.to be_success
   end
+end

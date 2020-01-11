@@ -185,7 +185,7 @@ definitions:
 ```
 </details>
 
-## Reference articles
+## Reference
 - 全般  
   - [Docker × Ruby on Rails × MySQLの環境構築](https://qiita.com/tatsuo-iriyama/items/0bf3b08de03280314c91)
     - 調べたきっかけ：Dockerの準備始めた時にMysqlの準備をしていなかったことに気づいた。
@@ -216,8 +216,17 @@ definitions:
     - Couldn't create 'DoingLog_development' database. Please check your configuration.
       rake aborted!
       Mysql2::Error: Authentication plugin 'caching_sha2_password' cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory
+  - [docker-compose upしたときに「A server is already running.」って言われないようにする](https://qiita.com/paranishian/items/862ce4de104992df48e1)20200111
+    - server.pidにpidが残留する事象が生じている場合への対策
 
 - Rails
+  - [Railsガイド](https://railsguides.jp/)
+    - [Active Record の関連付け](https://railsguides.jp/association_basics.html)
+    - [Active Record バリデーション](https://railsguides.jp/active_record_validations.html)
+      - [validates :name, uniqueness: { case_sensitive: false }](https://railsguides.jp/active_record_validations.html#uniqueness)
+        - 一意性制約で大文字小文字を区別するかどうか
+      - [重複について 2.11 uniqueness](https://railsguides.jp/active_record_validations.html#uniqueness)
+
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
   - [gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)
   - [Selenium [DEPRECATION] Selenium::WebDriver::Chrome#driver_path= is deprecated が出る件](https://blog.tamesuu.com/2019/06/08/274/)
@@ -236,6 +245,21 @@ definitions:
         Created database 'DoingLog_development'
         Created database 'DoingLog_test'
 
+  - Webdrivers
+    - [Failed to find Chrome binary with Rails 6 rc2 #148](https://github.com/titusfortner/webdrivers/issues/148)
+      - RSpecでSystem specを初めて走らす時に生じたエラー。
+    - [【rails】Docker環境でSystemSpecの導入の仕方。](https://eiji-hb.hatenablog.com/entry/2019/12/18/194357)
+      - 下記エラーへの対処法を探しているときに見つけた記事。
+
+        ```
+        Selenium::WebDriver::Error::WebDriverError:
+                Unable to find chromedriver. Please download the server from
+                https://chromedriver.storage.googleapis.com/index.html and place it somewhere on your PATH.
+                More info at https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver.
+        ```
+    - [Selenium エラー対応 Chrome failed to start: exited abnormally](https://chida09.com/selenium-exited-abnormally/)
+      - バージョンの整合について
+
   - Devise
     - [[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)
     - [deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)
@@ -253,6 +277,14 @@ definitions:
 
   - RSpec
     - 書籍：[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)
+    - [Rails + Selenium + DockerでSystemSpecの環境構築](https://qiita.com/ngron/items/f61b8635b4d67f666d75)20200108
+      - 主に設定について参照。きっかけはSystem spec試運転時の下記エラー
+        ```
+          Selenium::WebDriver::Error::UnknownError:
+                unknown error: Chrome failed to start: exited abnormally
+                  (unknown error: DevToolsActivePort file doesn't exist)
+                  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+        ```
     - [ruby – RSpecマッチャーを複数行に分割](https://codeday.me/jp/qa/20190727/1315872.html)
       - expect後ろの改行について expect(...).to include
     - [stackoverflow - サンプルデータにセットするための、一定の長さのランダムな文字列を生成するための簡単な方法](https://ja.stackoverflow.com/questions/4687/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AB%E3%82%BB%E3%83%83%E3%83%88%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE-%E4%B8%80%E5%AE%9A%E3%81%AE%E9%95%B7%E3%81%95%E3%81%AE%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%81%AA%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E6%96%B9%E6%B3%95)
@@ -284,7 +316,13 @@ definitions:
       rake aborted!
       StandardError: An error has occurred, all later migrations canceled:
 
+---
+
+- VSCode
+  - [VSCodeで.erbファイルのHTMLタグ補完を有効にする](https://unirt.hatenablog.com/entry/2018/06/18/075030)
+
 ## 本リポジトリについて覚書
+
  ~~既存リポジトリ[DoingLog - RailsとVueによる取り組み記録用アプリの試作](https://github.com/RiSEblackbird/DoingLog)において、初めて触れる概念で詰まることが相次ぐと思われるので、本リポジトリでおおよそ既知技術でアプリの雛形を制作する。~~  
 ~~ポートフォリオというよりは個人での実用を意識しているので、動く様子を早く見たい。~~ 
 
