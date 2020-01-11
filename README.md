@@ -201,21 +201,23 @@ definitions:
   - [mysql Docker Official Images](https://hub.docker.com/_/mysql)
   - [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
   - [SO - You must use Bundler 2 or greater with this lockfile. When running docker-compose up locally](https://stackoverflow.com/questions/55909543/you-must-use-bundler-2-or-greater-with-this-lockfile-when-running-docker-compos)
-    - bundlerのバージョン不適合、$ docker-compose up　⇨　"bundle install"失敗。  
-      Dockerfileに"RUN gem install bundler -v 2.0.1"を追記して解消。  
+    - bundlerのバージョン不適合、```$ docker-compose up```　⇨　"bundle install"失敗。  
+      ```Dockerfileに"RUN gem install bundler -v 2.0.1"```を追記して解消。  
   - [Docker上でrails/webpackerなアプリケーションの開発用DockerfileではNODE_ENVを明示的にdevelopmentに指定してyarn installしよう](https://qiita.com/bananaumai/items/34e355a0fd25c3dd0185)
-    - $ docker-compose run web rake db:create でyarnのチェックを促されてエラーとなる事象への対処。
-      Dockerfileに"RUN NODE_ENV=development yarn install"を追記して
+    - ```$ docker-compose run web rake db:creat```e でyarnのチェックを促されてエラーとなる事象への対処。
+      Dockerfileに```RUN NODE_ENV=development yarn install```を追記して
   - [【docker】mysqlのイメージを取得し起動](https://se-tomo.com/2019/09/23/%E3%80%90docker%E3%80%91mysql%E3%81%AE%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%92%E5%8F%96%E5%BE%97%E3%81%97%E8%B5%B7%E5%8B%95/)
     - Mysqlイメージの導入から起動までの一連の流れを参照
   - [Use volumes](https://docs.docker.com/storage/volumes/)
     - Dockerでのdb永続化について
     - 関連質問：[Where is a mysql volume db-data:/var/lib/mysql/data stored?](https://stackoverflow.com/questions/58090668/where-is-a-mysql-volume-db-data-var-lib-mysql-data-stored)
   - [Docker で MySQL 8.0.4 を使う](https://qiita.com/yensaki/items/9e453b7320ca2d0461c7)
-    - $ docker-compose run web rake db:create
-    - Couldn't create 'DoingLog_development' database. Please check your configuration.
+    - ```$ docker-compose run web rake db:create```
+    - ```
+      Couldn't create 'DoingLog_development' database. Please check your configuration.
       rake aborted!
       Mysql2::Error: Authentication plugin 'caching_sha2_password' cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory
+      ```
   - [docker-compose upしたときに「A server is already running.」って言われないようにする](https://qiita.com/paranishian/items/862ce4de104992df48e1) 20200111
     - server.pidにpidが残留する事象が生じている場合への対策
 
@@ -244,17 +246,23 @@ definitions:
 
   - Rails "6"
     - [Rails6 Webpackerでエラーが出た](https://qiita.com/libertyu/items/1eb74adc817ab8971100)
-      - 初回および、やり直し1227初期での$ docker-compose up にて.
-        - web_1  | /usr/local/bundle/gems/webpacker-4.2.2/lib/webpacker/configuration.rb:95:in `rescue in load': Webpacker configuration file not found /DoingLog/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ rb_sysopen - /DoingLog/config/webpacker.yml (RuntimeError)
-        - $ docker-compose run web rails webpacker:install
-          - sh: 1: node: not found
+      - 初回および、やり直し1227初期での```$ docker-compose up``` にて.
+        - ```
+          web_1  | /usr/local/bundle/gems/webpacker-4.2.2/lib/webpacker/configuration.rb:95:in `rescue in load': Webpacker configuration file not found /DoingLog/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ rb_sysopen - /DoingLog/config/webpacker.yml (RuntimeError)
+          ```
+        - ```$ docker-compose run web rails webpacker:install```
+          - ```
+            sh: 1: node: not found
             Webpacker requires Node.js >= 8.16.0 and you are using 4.8.2
             Please upgrade Node.js https://nodejs.org/en/download/
+            ```
         - やり直し1227前のDockerfileからyarn, nodeインストール用の設定を引用して解消
-    - 初期構成での$ docker-compose run web rake db:create　成功(1228未明)
-      - Starting railsonlyfordoinglog_db_1 ... done
+    - 初期構成での```$ docker-compose run web rake db:create```　成功(1228未明)
+      - ```
+        Starting railsonlyfordoinglog_db_1 ... done
         Created database 'DoingLog_development'
         Created database 'DoingLog_test'
+        ```
 
   - Webdrivers
     - [Failed to find Chrome binary with Rails 6 rc2 #148](https://github.com/titusfortner/webdrivers/issues/148)
@@ -274,17 +282,19 @@ definitions:
   - Devise
     - [[*Rails*] deviseの使い方（rails5版）](https://qiita.com/cigalecigales/items/f4274088f20832252374)
     - [deviseでUserテーブルの作成が出来ない。 - teratail](https://teratail.com/questions/210291)
-      - $ rails g devise UserでUserテーブルが"作成"ではなく"変更"としてマイグレーションファイルに記載されてしまう事象への対処。
+      - ```$ rails g devise User```でUserテーブルが"作成"ではなく"変更"としてマイグレーションファイルに記載されてしまう事象への対処。
 
   - ActsAsTaggableOn
     - [Railsでacts-as-taggable-onを使ってタグ管理を行う](https://ruby-rails.hatenadiary.com/entry/20150225/1424858414)
       - 扱い方をまとめてくれている。
     - [For MySql users](https://github.com/mbleigh/acts-as-taggable-on#for-mysql-users)
       - Mysqlユーザー用の必要操作
-      - $ docker-compose run web rake acts_as_taggable_on_engine:tag_names:collate_bin
+      - ```$ docker-compose run web rake acts_as_taggable_on_engine:tag_names:collate_bin```
+        ```
         Starting railsonlyfordoinglog_db_1 ... done
         -- execute("ALTER TABLE tags MODIFY name varchar(255) CHARACTER SET utf8 COLLATE utf8_bin;")
         -> 0.0735s
+        ```
 
   - RSpec
     - 書籍：[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)
@@ -313,20 +323,23 @@ definitions:
   - [Railsでmysql2がインストールできない](https://qiita.com/Yutazon/items/8d1e538b8c89fc7bda3c)
   - [Cannot load `Rails.application.database_configuration`: (NoMethodError) with launching to Heroku](https://stackoverflow.com/questions/41905756/cannot-load-rails-application-database-configuration-nomethoderror-with-lau/41913290)
     - config/database.yml内の参照の仕組み。
-    - 調べたきっかけ：$ docker-compose run web bundle exec rails g rspec:feature problem_edit 失敗時の
+    - 調べたきっかけ：```$ docker-compose run web bundle exec rails g rspec:feature problem_edit``` 失敗時の
+      ```
       (erb):31:in `<main>': Cannot load database configuration:  
       undefined method `[]' for nil:NilClass (NoMethodError)
+      ```
   - [MySQLでBLOB/TEXT型のカラムにはデフォルト値を設定できない](https://easyramble.com/blob-text-column-default-value-error.html)
     - 記事タイトルまんま。下記エラー発生時の対処参考(※ 記事での環境はPHP - CakePHP)
-    - Mysql2::Error: BLOB, TEXT, GEOMETRY or JSON column 'profile' can't have a default value
+    - ```Mysql2::Error: BLOB, TEXT, GEOMETRY or JSON column 'profile' can't have a default value```
     - Docker構成前まではDBがSqlite指定だったので特にエラーにならなかった。
-    - $ docker-compose run web rake db:migrate
+    - ```$ docker-compose run web rake db:migrate```
+      ```
       Starting railsonlyfordoinglog_db_1 ... done
       == 20191127054530 DeviseCreateUsers: migrating ================================
       -- create_table(:users)
       rake aborted!
       StandardError: An error has occurred, all later migrations canceled:
-
+      ```
 ---
 
 - VSCode
