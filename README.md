@@ -216,7 +216,7 @@ definitions:
     - Couldn't create 'DoingLog_development' database. Please check your configuration.
       rake aborted!
       Mysql2::Error: Authentication plugin 'caching_sha2_password' cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory
-  - [docker-compose upしたときに「A server is already running.」って言われないようにする](https://qiita.com/paranishian/items/862ce4de104992df48e1)20200111
+  - [docker-compose upしたときに「A server is already running.」って言われないようにする](https://qiita.com/paranishian/items/862ce4de104992df48e1) 20200111
     - server.pidにpidが残留する事象が生じている場合への対策
 
 - Rails
@@ -230,6 +230,17 @@ definitions:
   - [Active Record の関連付け](https://railsguides.jp/association_basics.html#has-many-through%E3%81%A8has-and-belongs-to-many%E3%81%AE%E3%81%A9%E3%81%A1%E3%82%89%E3%82%92%E9%81%B8%E3%81%B6%E3%81%8B)
   - [gemのdeviseをインストールした直後のエラー](https://qiita.com/ryouzi/items/9c5324ba567109ab2a22)
   - [Selenium [DEPRECATION] Selenium::WebDriver::Chrome#driver_path= is deprecated が出る件](https://blog.tamesuu.com/2019/06/08/274/)
+  - [【Rails】ActiveModel MissingAttributeError (can’t write unknown attribute ‘user_id`)のエラー解消法！](https://tanarizm.com/attribute_user_id#ActiveModel_MissingAttributeError_cant_write_unknown_attribute_user_id-2) 20200112
+    - 状況例：始め'user_id'がないテーブルの状態でにテストを走らせた時。
+    - ```
+      121) TryShows Tryの詳細ページ表示まで
+       Failure/Error:
+         doing = FactoryBot.create(:doing, title: "Swaggerの使用方法の学習",
+           summary: "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。", user: user)
+       
+       ActiveModel::MissingAttributeError:
+         can't write unknown attribute `user_id`
+      ```
 
   - Rails "6"
     - [Rails6 Webpackerでエラーが出た](https://qiita.com/libertyu/items/1eb74adc817ab8971100)
