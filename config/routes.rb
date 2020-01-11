@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   get 'users/show'
   root 'doing_logs#index'
   get 'home' => 'doing_logs#index'
-  root 'home#index'
 
   resources :users, only: %i[index show]
-  resources :articles
+  resources :doing_logs
 end
