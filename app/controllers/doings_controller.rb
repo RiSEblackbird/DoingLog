@@ -4,45 +4,45 @@ class DoingsController < ApplicationController
   end
 
   def show
-    @doing_log = Doing.find(params[:id])
+    @doing = Doing.find(params[:id])
   end
 
   def new
-    @doing_log = Doing.new
+    @doing = Doing.new
   end
 
   def edit
-    @doing_log = Doing.find(params[:id])
+    @doing = Doing.find(params[:id])
   end
 
   def create
-    @doing_log = current_user.doings.new(doing_log_params)
-    if @doing_log.save
-      redirect_to @doing_log, notice: '新しいDoingが投稿されました！'
+    @doing = current_user.doings.new(doing_params)
+    if @doing.save
+      redirect_to @doing, notice: '新しいDoingが投稿されました！'
     else
       render 'new'
     end
   end
 
   def update
-    @doing_log = Doing.find(params[:id])
-    @doing_log.assign_attributes(doing_log_params)
-    if @doing_log.save
-      redirect_to @doing_log, notice: 'Doingの編集が完了しました。'
+    @doing = Doing.find(params[:id])
+    @doing.assign_attributes(doing_params)
+    if @doing.save
+      redirect_to @doing, notice: 'Doingの編集が完了しました。'
     else
       render 'edit'
     end
   end
 
   def destroy
-    @doing_log = Doing.find(params[:id])
-    @doing_log.destroy
+    @doing = Doing.find(params[:id])
+    @doing.destroy
     redirect_to controller: 'doings', action: 'index'
   end
 
   private
 
-  def doing_log_params
-    params.require(:doing_log).permit(:title, :summary)
+  def doing_params
+    params.require(:doing).permit(:title, :summary)
   end
 end

@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.feature "DoingEdits", type: :feature do
   scenario "ある特定のDoingの編集完了まで" do
     user = FactoryBot.create(:user)
-    doing_log = FactoryBot.create(:doing_log, title: "Swaggerの使用方法の学習",
+    doing = FactoryBot.create(:doing, title: "Swaggerの使用方法の学習",
       summary: "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。", user: user)
 
     sign_in_as user
 
     expect {
-      click_link "/doings/#{doing_log.id}"
+      click_link "/doings/#{doing.id}"
       click_link "編集"
       fill_in "取り組みタイトル", with: "目玉焼きの改良"
       fill_in "概要", with: "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"

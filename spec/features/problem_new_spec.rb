@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.feature "ProblemNews", type: :feature do
   scenario "Doing詳細にてProblemの新規追加完了まで" do
     user = FactoryBot.create(:user)
-    doing_log = FactoryBot.create(:doing_log, title: "住環境の改善活動",
+    doing = FactoryBot.create(:doing, title: "住環境の改善活動",
       summary: "劣悪な生活環境を総合的に見直す。", user: user)
 
     sign_in_as user
 
     expect {
-      click_link "/doings/#{doing_log.id}"
+      click_link "/doings/#{doing.id}"
 
       expect(page).to have_content "住環境の改善活動"
       expect(page).to have_content "劣悪な生活環境を総合的に見直す。"

@@ -5,9 +5,9 @@ RSpec.feature "DoingIndices", type: :feature do
   scenario "Doingの一覧ページの表示まで" do
     user = FactoryBot.create(:user)
     another_user = FactoryBot.create(:user)
-    doing_log = FactoryBot.create(:doing_log, title: "Swaggerの使用方法の学習",
+    doing = FactoryBot.create(:doing, title: "Swaggerの使用方法の学習",
       summary: "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。", user: user)
-    another_doing_log = FactoryBot.create(:doing_log, title: "Postmanの使用方法の学習",
+    another_doing = FactoryBot.create(:doing, title: "Postmanの使用方法の学習",
       summary: "API開発でよく使用されるらしいPostmanの使用方法を探る。", user: another_user)
 
     sign_in_as user

@@ -6,7 +6,7 @@ FactoryBot.define do
     summary { Faker::Base.regexify('[problemぃ57さあ]{1000}') }
     solved { true }
     association :user
-    association :doing_log
+    association :doing
 
     trait :invalid do
       title { nil }
