@@ -1,0 +1,2 @@
+module DoingLogsHelper
+end
