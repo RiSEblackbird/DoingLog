@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class DoingLog < ApplicationRecord
-  belongs_to :user, counter_chache: :article_count
+class Doing < ApplicationRecord
+  belongs_to :user, counter_cache: :doing_count
 
   validates :title, :body, presence: true
   validates :title, length: { maximum: 100 }

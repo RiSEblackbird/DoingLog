@@ -1,0 +1,20 @@
+<div class="mx-auto" id="doing-form">
+  <%= form_for @doing do |f| %>
+    <div class= "input-group" id="doing-title">
+      <span :title, class="input-group-text">タイトル</span>
+      <%= f.text_field :title, class: 'form-control', placeholder: "タイトルを記載" %>
+    </div>
+    <div class="card mb-2" id="doing-body">
+      <div class="card-header py-1">
+        <%= f.text_area :content, class: 'form-control mb-1', placeholder: "取り組み内容を記載" %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <% if current_page?(new_doing_path) %>
+        <%= f.submit '投稿する', class: 'btn btn-secondary btn-lg btn-block' %>
+      <% else %>
+        <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
