@@ -16,6 +16,6 @@ RSpec.feature "DoingNews", type: :feature do
       expect(page).to have_content "目玉焼きの改良"
       expect(page).to have_content "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
       expect(page).to have_content "User: #{user.username}"
-    }.to change(user.doing_logs, :count).by(1)
+    }.to change(user.doings, :count).by(1)
   end
 end

@@ -150,7 +150,7 @@ RSpec.describe DoingsController, type: :controller do
 
       it 'doing_logの削除' do
         sign_in @user
-        expect { delete :destroy, params: { id: @doing_log.id } }.to change(@user.doing_logs, :count).by(-1)
+        expect { delete :destroy, params: { id: @doing_log.id } }.to change(@user.doings, :count).by(-1)
       end
     end
 
@@ -204,7 +204,7 @@ RSpec.describe DoingsController, type: :controller do
         it 'doing_logの追加に成功' do
           doing_log_params = FactoryBot.attributes_for(:doing_log)
           sign_in @user
-          expect { post :create, params: { doing_log: doing_log_params } }.to change(@user.doing_logs, :count).by(1)
+          expect { post :create, params: { doing_log: doing_log_params } }.to change(@user.doings, :count).by(1)
         end
       end
 
@@ -212,7 +212,7 @@ RSpec.describe DoingsController, type: :controller do
         it 'doing_logの追加に失敗' do
           doing_log_params = FactoryBot.attributes_for(:doing_log, :invalid)
           sign_in @user
-          expect { post :create, params: { doing_log: doing_log_params } }.to_not change(@user.doing_logs, :count)
+          expect { post :create, params: { doing_log: doing_log_params } }.to_not change(@user.doings, :count)
         end
       end
     end

@@ -13,7 +13,7 @@ RSpec.feature "DoingIndices", type: :feature do
     sign_in_as user
 
     expect {
-      click_link "/doing_logs"
+      click_link "/doings"
 
       expect(page).to have_content "取り組み事項一覧"
       expect(page).to have_content "Swaggerの使用方法の学習"

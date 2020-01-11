@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
-  has_many :doing_logs, dependent: :destroy
+  has_many :doings, dependent: :destroy
 
   validates :username, presence: true,
                        length: { minimum: 2, maximum: 30, allow_blank: true },

@@ -9,7 +9,7 @@ RSpec.feature "ProblemNews", type: :feature do
     sign_in_as user
 
     expect {
-      click_link "/doing_logs/#{doing_log.id}"
+      click_link "/doings/#{doing_log.id}"
 
       expect(page).to have_content "住環境の改善活動"
       expect(page).to have_content "劣悪な生活環境を総合的に見直す。"

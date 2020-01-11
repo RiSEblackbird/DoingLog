@@ -9,7 +9,7 @@ RSpec.feature "DoingShows", type: :feature do
     sign_in_as user
 
     expect {
-      click_link "/doing_logs/#{doing_log.id}"
+      click_link "/doings/#{doing_log.id}"
 
       expect(page).to have_content "Swaggerの使用方法の学習"
       expect(page).to have_content "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。"

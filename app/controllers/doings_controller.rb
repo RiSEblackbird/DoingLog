@@ -1,6 +1,6 @@
 class DoingsController < ApplicationController
   def index
-    @doing_logs = Doing.all
+    @doings = Doing.all
   end
 
   def show
@@ -16,7 +16,7 @@ class DoingsController < ApplicationController
   end
 
   def create
-    @doing_log = current_user.doing_logs.new(doing_log_params)
+    @doing_log = current_user.doings.new(doing_log_params)
     if @doing_log.save
       redirect_to @doing_log, notice: '新しいDoingが投稿されました！'
     else
@@ -37,7 +37,7 @@ class DoingsController < ApplicationController
   def destroy
     @doing_log = Doing.find(params[:id])
     @doing_log.destroy
-    redirect_to controller: 'doing_logs', action: 'index'
+    redirect_to controller: 'doings', action: 'index'
   end
 
   private
