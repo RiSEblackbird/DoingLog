@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <div class="d-flex justify-content-between">
+    <div>
+      <% if current_user.id == doing.user.id %>
+        <%= link_to "削除", doing, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'float-left mr-3 btn-sm btn-light', id: 'delete-btn' %>
+        <%= link_to "編集", [:edit, doing], class: 'float-left mr-3 btn-sm btn-light' ,id: 'edit-btn' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
