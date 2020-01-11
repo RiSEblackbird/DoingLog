@@ -216,6 +216,8 @@ definitions:
     - Couldn't create 'DoingLog_development' database. Please check your configuration.
       rake aborted!
       Mysql2::Error: Authentication plugin 'caching_sha2_password' cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory
+  - [docker-compose upしたときに「A server is already running.」って言われないようにする](https://qiita.com/paranishian/items/862ce4de104992df48e1)20200111
+    - server.pidにpidが残留する事象が生じている場合への対策
 
 - Rails
   - [Railsガイド](https://railsguides.jp/)
