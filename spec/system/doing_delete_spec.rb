@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "DoingLogDeletes", type: :system do
-  scenario "ある特定のDoingLogの削除完了まで" do
+RSpec.feature "DoingDeletes", type: :system do
+  scenario "ある特定のDoingの削除完了まで" do
     user = FactoryBot.create(:user)
     doing_log = FactoryBot.create(:doing_log, title: "Swaggerの使用方法の学習",
       summary: "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。", user: user)

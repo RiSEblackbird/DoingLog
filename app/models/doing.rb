@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DoingLog < ApplicationRecord
+class Doing < ApplicationRecord
   belongs_to :user, counter_chache: :article_count
 
   validates :title, :body, presence: true

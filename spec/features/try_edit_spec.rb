@@ -15,7 +15,7 @@ RSpec.feature "TryEdits", type: :feature do
       fill_in "概要", with: "Github - ProjectsとIssuesを関連付けてCommitとの紐付けによって更新履歴を詳細項目毎に分類することで振り返りや操作手順の確認などを容易にする。"
       click_button "編集を登録する"
 
-      expect(page).to have_content "DoingLogの編集が完了しました。"
+      expect(page).to have_content "Doingの編集が完了しました。"
       expect(page).to have_content "Github - Projectsによる更新履歴の分類"
       expect(page).to have_content "Github - ProjectsとIssuesを関連付けてCommitとの紐付けによって更新履歴を詳細項目毎に分類することで振り返りや操作手順の確認などを容易にする。"
       expect(page).to have_content "User: #{user.username}"

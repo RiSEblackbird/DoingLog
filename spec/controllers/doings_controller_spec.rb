@@ -163,7 +163,7 @@ RSpec.describe DoingsController, type: :controller do
 
       it 'doing_logの削除不可' do
         sign_in @user
-        expect { delete :destroy, params: { id: @doing_log.id } }.to_not change(DoingLog, :count)
+        expect { delete :destroy, params: { id: @doing_log.id } }.to_not change(Doing, :count)
       end
 
       it 'ルートにリダイレクトすること' do
@@ -189,7 +189,7 @@ RSpec.describe DoingsController, type: :controller do
       end
 
       it 'doing_logの削除不可' do
-        expect { delete :destroy, params: { id: @doing_log.id } }.to_not change(DoingLog, :count)
+        expect { delete :destroy, params: { id: @doing_log.id } }.to_not change(Doing, :count)
       end
     end
   end
@@ -225,7 +225,7 @@ RSpec.describe DoingsController, type: :controller do
 
       it 'doing_logの追加に失敗' do
         doing_log_params = FactoryBot.attributes_for(:doing_log)
-        expect { post :create, params: { doing_log: doing_log_params } }.to_not change(DoingLog, :count)
+        expect { post :create, params: { doing_log: doing_log_params } }.to_not change(Doing, :count)
       end
     end
   end

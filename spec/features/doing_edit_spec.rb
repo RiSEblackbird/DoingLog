@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "DoingLogEdits", type: :feature do
-  scenario "ある特定のDoingLogの編集完了まで" do
+RSpec.feature "DoingEdits", type: :feature do
+  scenario "ある特定のDoingの編集完了まで" do
     user = FactoryBot.create(:user)
     doing_log = FactoryBot.create(:doing_log, title: "Swaggerの使用方法の学習",
       summary: "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。", user: user)
@@ -15,7 +15,7 @@ RSpec.feature "DoingLogEdits", type: :feature do
       fill_in "概要", with: "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
       click_button "編集を登録する"
 
-      expect(page).to have_content "DoingLogの編集が完了しました。"
+      expect(page).to have_content "Doingの編集が完了しました。"
       expect(page).to have_content "目玉焼きの改良"
       expect(page).to have_content "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
       expect(page).to have_content "User: #{user.username}"

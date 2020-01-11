@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature "DoingLogIndices", type: :feature do
+RSpec.feature "DoingIndices", type: :feature do
 
-  scenario "DoingLogの一覧ページの表示まで" do
+  scenario "Doingの一覧ページの表示まで" do
     user = FactoryBot.create(:user)
     another_user = FactoryBot.create(:user)
     doing_log = FactoryBot.create(:doing_log, title: "Swaggerの使用方法の学習",

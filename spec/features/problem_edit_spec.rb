@@ -16,7 +16,7 @@ RSpec.feature "ProblemEdits", type: :feature do
       click_button "編集を登録する"
       check "解決済み"
 
-      expect(page).to have_content "DoingLogの編集が完了しました。"
+      expect(page).to have_content "Doingの編集が完了しました。"
       expect(page).to have_content "室内照度不足"
       expect(page).to have_content "部屋がビルの陰に位置するので、自然光による照度が確保できない。"
       expect(page).to have_checked_field('解決済み')
