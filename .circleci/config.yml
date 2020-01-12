@@ -3,7 +3,7 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.5.3-node-browsers-legacy
-          command: [--default-authentication-plugin=mysql_native_password]
+        command: [--default-authentication-plugin=mysql_native_password]
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
