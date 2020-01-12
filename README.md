@@ -364,14 +364,6 @@ definitions:
       rake aborted!
       StandardError: An error has occurred, all later migrations canceled:
       ```
-  - [railsのapp作成でmysqlを使用する時の導入とハマるところ　rake db:createができるまでの流れ](https://qiita.com/Kaisyou/items/17142ff2d080d565fedc) 20200112
-    - CircleCIの実行中に以下のエラーが生じたので調べた。
-      ```
-        bundle exec rake db:create
-        Unknown MySQL server host 'db' (-2)
-        Couldn't create 'DoingLog_test' database. Please check your configuration.
-        rake aborted!
-      ```
 ---
 
 - VSCode
