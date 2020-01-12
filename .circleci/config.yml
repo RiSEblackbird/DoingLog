@@ -23,14 +23,14 @@ jobs:
             - v2-dependencies-
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - save_cache:
-        paths:
-          - ./vendor/bundle
-        key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
-        name: Rspec
-        command: bundle exec rspec
+          name: Rspec
+          command: bundle exec rspec
 
 workflows:
   version: 2
