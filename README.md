@@ -218,6 +218,14 @@ definitions:
       - 自分は上記の反映後も状況変わらず
     - [PostgreSQL always reports “Job was canceled”](https://discuss.circleci.com/t/postgresql-always-reports-job-was-canceled/29208) 20200112
       - 挙動は正常なもので心配はいらないとのこと。
+  - [認証プラグイン「caching_sha2_password」をcircleci/mysqlにロードできません](https://tutorialmore.com/questions-177209.htm) 20200112
+    ```
+    #!/bin/bash -eo pipefail
+    bundle exec rake db:create
+    Authentication plugin 'caching_sha2_password' cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: cannot open shared object file: No such file or directory
+    Couldn't create 'DoingLog_test' database. Please check your configuration.
+    ```
+    - ```caching_sha2_password```はMySQL8の新機能。
 
   - Local CLI
     - [CircleCI の設定ファイルでハマったらローカルで Validate チェックしよう](https://qiita.com/zoe302/items/261fe8e781fe52a653d8)
