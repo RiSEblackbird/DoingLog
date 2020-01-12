@@ -194,8 +194,32 @@ definitions:
   - [https://circleci.com/docs/2.0/postgres-config/#example-mysql-project](https://circleci.com/docs/2.0/postgres-config/#example-mysql-project)
   - [Setting up CircleCI 2.0 for Rails](https://thoughtbot.com/blog/circleci-2-rails)
     - Docker imageの説明が参考になった。
+  - [CircleCI 2.0 移行に潜む闇](https://tech.smarthr.jp/entry/2017/07/14/124400) 20200112
+    - 紹介されているものと同じエラーに遭遇
+    - ymlのインデントの誤り(自分の場合は下記)
+      - ```
+        Build-agent version 1.0.23380-924dbe3d (2020-01-10T17:38:51+0000)
+        Configuration errors: 1 error occurred:
+
+        * In step 2 definition: Step
+
+          - keys: [v2-dependencies-{{ checksum "Gemfile.lock" }} v2-dependencies-]
+            restore_cache: map[]
+
+        has incorrect indentation, it should be formatted like:
+
+          - step:
+              option1: value
+              option2: value
+        ```
+
   - [CircleCI の設定ファイルでハマったらローカルで Validate チェックしよう](https://qiita.com/zoe302/items/261fe8e781fe52a653d8)
     - LoacalでCircleCIを実行する方法。
+  - Local CLI
+    - [CircleCI 2.0 Workflow ビルドが失敗する：`build` という名前のジョブが見つかりません](https://support.circleci.com/hc/ja/articles/115015839188-CircleCI-2-0-Workflow-%E3%83%93%E3%83%AB%E3%83%89%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B-build-%E3%81%A8%E3%81%84%E3%81%86%E5%90%8D%E5%89%8D%E3%81%AE%E3%82%B8%E3%83%A7%E3%83%96%E3%81%8C%E8%A6%8B%E3%81%A4%E3%81%8B%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93) 20200112
+      - 引用：config に CircleCI 2.0 Workflow が含まれている場合、それが Workflow であることを理解せず実行を試みるため、実行に失敗します。 この問題は把握済みですので、将来的に修正予定です。
+    - [CircleCI Local CLI の build で "Cannot find a job named `build` to run in the `jobs:` section of your configuration file." のエラー](https://www.pospome.work/entry/2018/12/17/023938) 20200112
+      - ```$circleci build --job deploy .circleci/config.yml```
 
 - Docker
   - [mysql Docker Official Images](https://hub.docker.com/_/mysql)
