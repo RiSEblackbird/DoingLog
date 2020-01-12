@@ -16,6 +16,10 @@ jobs:
     steps:
       - checkout
 
+      - run: 
+          name: Wait Docker container
+          command: dockerize -wait tcp://localhost:3306 -timeout 1m
+
       - restore_cache:
           keys:
             - v2-dependencies-{{ checksum "Gemfile.lock" }}
