@@ -258,6 +258,8 @@ definitions:
     ```
   - [docker-compose upしたときに「A server is already running.」って言われないようにする](https://qiita.com/paranishian/items/862ce4de104992df48e1) 20200111
     - server.pidにpidが残留する事象が生じている場合への対策
+  - [《滅びの呪文》Docker Composeで作ったコンテナ、イメージ、ボリューム、ネットワークを一括完全消去する便利コマンド](https://qiita.com/suin/items/19d65e191b96a0079417#docker-compose-down%E3%81%AE%E8%AA%AC%E6%98%8E) 20200113
+    ```$ docker-compose down --rmi all --volumes```
 
 - Rails
   - [Railsガイド](https://railsguides.jp/)
