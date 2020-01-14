@@ -6,6 +6,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
     volumes:
       - ./mysql-confd:/etc/mysql/conf.d
+      - mysql-data:/var/lib/mysql
 
   web:
     build: .
@@ -22,3 +23,6 @@ services:
 
   webdriver_chrome:
     image: selenium/standalone-chrome
+
+volumes:
+  mysql-data:
