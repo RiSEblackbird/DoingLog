@@ -13,7 +13,7 @@ jobs:
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_ROOT_PASSWORD: ""
-          MYSQL_DATABASE: test_db
+          MYSQL_DATABASE: DoingLog_test
           MYSQL_HOST: 127.0.0.1
           MYSQL_ROOT_HOST: "%"
           MYSQL_USER: root
