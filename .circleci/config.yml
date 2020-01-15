@@ -35,7 +35,6 @@ jobs:
       - run: 
           name: Wait Docker container
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 2m
-      - run: NODE_ENV=test bundle exec rails webpacker:compile
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
