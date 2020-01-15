@@ -4,6 +4,7 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: root
     volumes:
       - ./mysql-confd:/etc/mysql/conf.d
       - mysql-data:/var/lib/mysql
