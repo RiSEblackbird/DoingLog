@@ -6,30 +6,40 @@ jobs:
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
+          DB_USERNAME: "root"
+          DB_PASSWORD: "password"
       - image: circleci/mysql:8.0
+        command: [--default-authentication-plugin=mysql_native_password]
         environment:
-          MYSQL_ROOT_PASSWORD: password
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_ROOT_PASSWORD: ""
           MYSQL_DATABASE: test_db
-          MYSQL_USER: user
-          MYSQL_PASSWORD: tis193
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_ROOT_HOST: "%"
+          MYSQL_USER: root
     working_directory: ~/circleci-rails-doing-log
 
     steps:
       - checkout
+
       - restore_cache:
-        keys:
-          - v2-dependencies-{{ checksum "Gemfile.lock" }}
-          - v2-dependencies-
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      - run: gem install bundler -v 2.0.1
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - save_cache:
-        paths:
-          - ./vendor/bundle
-        key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - run: 
+          name: Wait Docker container
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 2m
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
-        name: Rspec
-        command: bundle exec rspec
+          name: Rspec
+          command: bundle exec rspec
 
 workflows:
   version: 2
