@@ -226,7 +226,7 @@ definitions:
     Couldn't create 'DoingLog_test' database. Please check your configuration.
     ```
     - ```caching_sha2_password```はMySQL8の新機能。
-  - [Webpacker can't find pack in test environment #1047](https://github.com/rails/webpacker/issues/1047) 20200115
+  - 非採用 [Webpacker can't find pack in test environment #1047](https://github.com/rails/webpacker/issues/1047) 20200115
     - CircleCIでRSpecが初めて動かせた際([当該ログ](https://circleci.com/gh/RiSEblackbird/DoingLog/116?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)))の下記エラーへの対処について
       ```
         95) DoingNews Doingの新規投稿
@@ -242,11 +242,6 @@ definitions:
         Your manifest contains:
         {
         }
-      ```
-    - ステップに以下を追記
-      ```
-        steps: 
-        run: NODE_ENV=test bundle exec rails webpacker:compile
       ```
 
   - Local CLI
