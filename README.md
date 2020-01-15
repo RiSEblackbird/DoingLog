@@ -226,6 +226,28 @@ definitions:
     Couldn't create 'DoingLog_test' database. Please check your configuration.
     ```
     - ```caching_sha2_password```はMySQL8の新機能。
+  - [Webpacker can't find pack in test environment #1047](https://github.com/rails/webpacker/issues/1047) 20200115
+    - CircleCIでRSpecが初めて動かせた際([当該ログ](https://circleci.com/gh/RiSEblackbird/DoingLog/116?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)))の下記エラーへの対処について
+      ```
+        95) DoingNews Doingの新規投稿
+      Failure/Error: <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      
+      ActionView::Template::Error:
+        Webpacker can't find application in /home/circleci/circleci-rails-doing-log/public/packs-test/manifest.json. Possible causes:
+        1. You want to set webpacker.yml value of compile to true for your environment
+           unless you are using the `webpack -w` or the webpack-dev-server.
+        2. webpack has not yet re-run to reflect updates.
+        3. You have misconfigured Webpacker's config/webpacker.yml file.
+        4. Your webpack configuration is not creating a manifest.
+        Your manifest contains:
+        {
+        }
+      ```
+    - ステップに以下を追記
+      ```
+        steps: 
+        run: NODE_ENV=test bundle exec rails webpacker:compile
+      ```
 
   - Local CLI
     - [CircleCI の設定ファイルでハマったらローカルで Validate チェックしよう](https://qiita.com/zoe302/items/261fe8e781fe52a653d8)
