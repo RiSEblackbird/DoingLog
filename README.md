@@ -278,6 +278,13 @@ definitions:
   - [《滅びの呪文》Docker Composeで作ったコンテナ、イメージ、ボリューム、ネットワークを一括完全消去する便利コマンド](https://qiita.com/suin/items/19d65e191b96a0079417#docker-compose-down%E3%81%AE%E8%AA%AC%E6%98%8E) 20200113
     ```$ docker-compose down --rmi all --volumes```
 
+- AWS
+  - 概念
+    - [DockerやECR, ECS, Fargateなど、コンテナ周りのAWS知識を効率的にキャッチアップしたい人のために](https://qiita.com/nya-dora/items/0fa064f8a4402939673b)
+    - ECS
+      - [AWS Fargate のすヽめ](https://elastic-infra.com/blog/aws-fargate-intro/)
+  - 実装
+
 - Rails
   - [Railsガイド](https://railsguides.jp/)
     - [Active Record の関連付け](https://railsguides.jp/association_basics.html)
