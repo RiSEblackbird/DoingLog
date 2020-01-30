@@ -280,9 +280,9 @@ definitions:
 
 - AWS
   - 概念
-    - [DockerやECR, ECS, Fargateなど、コンテナ周りのAWS知識を効率的にキャッチアップしたい人のために](https://qiita.com/nya-dora/items/0fa064f8a4402939673b)
+    - [DockerやECR, ECS, Fargateなど、コンテナ周りのAWS知識を効率的にキャッチアップしたい人のために | Qiita](https://qiita.com/nya-dora/items/0fa064f8a4402939673b) 20200127
     - ECS
-      - [AWS Fargate のすヽめ](https://elastic-infra.com/blog/aws-fargate-intro/)
+      - [AWS Fargate のすヽめ | Elastic Infra](https://elastic-infra.com/blog/aws-fargate-intro/) 20200127
   - 実装
 
 - Rails
