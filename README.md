@@ -278,6 +278,17 @@ definitions:
   - [《滅びの呪文》Docker Composeで作ったコンテナ、イメージ、ボリューム、ネットワークを一括完全消去する便利コマンド](https://qiita.com/suin/items/19d65e191b96a0079417#docker-compose-down%E3%81%AE%E8%AA%AC%E6%98%8E) 20200113
     ```$ docker-compose down --rmi all --volumes```
 
+- AWS
+  - 概念
+    - [DockerやECR, ECS, Fargateなど、コンテナ周りのAWS知識を効率的にキャッチアップしたい人のために | Qiita](https://qiita.com/nya-dora/items/0fa064f8a4402939673b) 20200127
+    - ECS
+      - [ECS運用のノウハウ | Qiita](https://qiita.com/naomichi-y/items/d933867127f27524686a) 20200130
+      - [ecs-deployを使ったAmazon ECSへのデプロイの裏側](https://sandragon.hatenablog.com/entry/2019/04/14/211209) 20200130
+      - [ecs-deployでECSにアプリをCIからデプロイする〜その①〜](https://matsushin11.com/ecs-deploy-first/) 20200130
+      - [AWS Fargate のすヽめ | Elastic Infra](https://elastic-infra.com/blog/aws-fargate-intro/) 20200127
+      - [RailsをAWS Fargateにデプロイする (AWS CLI / ECS CLIを使用)](http://yu0105teshi.hateblo.jp/entry/2019/04/03/152655) 20200207
+  - 実装
+
 - Rails
   - [Railsガイド](https://railsguides.jp/)
     - [Active Record の関連付け](https://railsguides.jp/association_basics.html)
