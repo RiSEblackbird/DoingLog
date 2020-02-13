@@ -291,13 +291,19 @@ definitions:
 - AWS
   - 概念
     - [DockerやECR, ECS, Fargateなど、コンテナ周りのAWS知識を効率的にキャッチアップしたい人のために | Qiita](https://qiita.com/nya-dora/items/0fa064f8a4402939673b) 20200127
-    - ECS
+    - EC2
+    - ECS(導入見送り)
       - [ECS運用のノウハウ | Qiita](https://qiita.com/naomichi-y/items/d933867127f27524686a) 20200130
       - [ecs-deployを使ったAmazon ECSへのデプロイの裏側](https://sandragon.hatenablog.com/entry/2019/04/14/211209) 20200130
+  - 実装
+    - EC2
+      - [(下準備編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで](https://qiita.com/naoki_mochizuki/items/f795fe3e661a3349a7ce) 200213
+      - [(Capistrano編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで](https://qiita.com/naoki_mochizuki/items/657aca7531b8948d267b) 200213
+    - ECS(導入見送り)
       - [ecs-deployでECSにアプリをCIからデプロイする〜その①〜](https://matsushin11.com/ecs-deploy-first/) 20200130
       - [AWS Fargate のすヽめ | Elastic Infra](https://elastic-infra.com/blog/aws-fargate-intro/) 20200127
       - [RailsをAWS Fargateにデプロイする (AWS CLI / ECS CLIを使用)](http://yu0105teshi.hateblo.jp/entry/2019/04/03/152655) 20200207
-  - 実装
+      - [Configuring Deploys | Circleci](https://circleci.com/docs/ja/2.0/deployment-integrations/#aws-ecs) 200213
 
 - Rails
   - [Railsガイド](https://railsguides.jp/)
