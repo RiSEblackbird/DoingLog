@@ -299,6 +299,10 @@ definitions:
     - EC2
       - [(下準備編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで](https://qiita.com/naoki_mochizuki/items/f795fe3e661a3349a7ce) 200213
       - [(Capistrano編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで](https://qiita.com/naoki_mochizuki/items/657aca7531b8948d267b) 200213
+    - RDS
+      - [スケーラブルなウェブサイトの構築方法：フェーズ 2-2 DB サブネットグループを作成](https://aws.amazon.com/jp/getting-started/projects/scalable-wordpress-website/02/02/)
+        RDSインスタンスを立てる時に必要なサブネットグループの項目設定
+
     - ECS(導入見送り)
       - [ecs-deployでECSにアプリをCIからデプロイする〜その①〜](https://matsushin11.com/ecs-deploy-first/) 20200130
       - [AWS Fargate のすヽめ | Elastic Infra](https://elastic-infra.com/blog/aws-fargate-intro/) 20200127
