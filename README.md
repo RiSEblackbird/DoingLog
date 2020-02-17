@@ -302,6 +302,11 @@ definitions:
     - RDS
       - [スケーラブルなウェブサイトの構築方法：フェーズ 2-2 DB サブネットグループを作成](https://aws.amazon.com/jp/getting-started/projects/scalable-wordpress-website/02/02/)
         RDSインスタンスを立てる時に必要なサブネットグループの項目設定
+        - DBサブネットグループの作成の際には２つのアベイラビリティゾーンを適用する必要がある。
+          ```
+          DB Subnet Group doesn't meet availability zone coverage requirement. Please add subnets to cover at least 2 availability zones. Current coverage: 1
+          ```
+          - 解決の参考：[【AWS】（番外編）初心者向けVPC内でEC2やRDSインスタンスを生成する際の備忘録 | SEワンタンの独学備忘録](https://www.wantanblog.com/entry/2019/09/24/225020)
 
     - ECS(導入見送り)
       - [ecs-deployでECSにアプリをCIからデプロイする〜その①〜](https://matsushin11.com/ecs-deploy-first/) 20200130
