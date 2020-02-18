@@ -297,8 +297,13 @@ definitions:
       - [ecs-deployを使ったAmazon ECSへのデプロイの裏側](https://sandragon.hatenablog.com/entry/2019/04/14/211209) 20200130
   - 実装
     - EC2
-      - [(下準備編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで](https://qiita.com/naoki_mochizuki/items/f795fe3e661a3349a7ce) 200213
-      - [(Capistrano編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで](https://qiita.com/naoki_mochizuki/items/657aca7531b8948d267b) 200213
+      - [(下準備編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで | Qiita](https://qiita.com/naoki_mochizuki/items/f795fe3e661a3349a7ce) 200213
+      - [(Capistrano編)世界一丁寧なAWS解説。EC2を利用して、RailsアプリをAWSにあげるまで | Qiita](https://qiita.com/naoki_mochizuki/items/657aca7531b8948d267b) 200213
+      - [「SSHホスト鍵が変わってるよ！」と怒られたときの対処 | Qiita](https://qiita.com/hnw/items/0eeee62ce403b8d6a23c) 200219
+        - キーペアのみを変更したEC2インスタンスにSSHログインしようとした際に発生。
+          ```
+          $ ssh-keygen -R [Elastic IP]
+          ```
     - RDS
       - [スケーラブルなウェブサイトの構築方法：フェーズ 2-2 DB サブネットグループを作成](https://aws.amazon.com/jp/getting-started/projects/scalable-wordpress-website/02/02/)
         RDSインスタンスを立てる時に必要なサブネットグループの項目設定
