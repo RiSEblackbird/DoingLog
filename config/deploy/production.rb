@@ -1,6 +1,6 @@
 # EC2のサーバー接続設定
 
-server "18.178.216.116", user: "seno", roles: %w{app db web}
+server "13.115.67.8", user: "seno", roles: %w{app db web}
 
 set :ssh_options, keys: '~/.ssh/first_aws_rsa' 
 
