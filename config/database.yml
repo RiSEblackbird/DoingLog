@@ -52,5 +52,5 @@ production:
   database: DoingLog_production
   username: DoingLog
   password: <%= ENV['DOINGLOG_DATABASE_PASSWORD'] %>
-
+  socket: /var/lib/mysql/mysql.sock
 

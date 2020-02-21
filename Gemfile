@@ -39,6 +39,11 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 4.0', require: !ENV['SELENIUM_REMOTE_URL']
+
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -53,6 +58,10 @@ group :development do
 end
 
 group :test do
+end
+
+group :production, :staging do
+  gem 'unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
