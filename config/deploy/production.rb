@@ -2,7 +2,9 @@
 
 server "13.115.67.8", user: "TIS", roles: %w{app db web}
 
-set :ssh_options, keys: '~/.ssh/doinglog_key_rsa' 
+# set :ssh_options, keys: '~/.ssh/doinglog_key_rsa' 
+
+set ssh_options: {keys: %w(~/.ssh/doinglog_key_rsa)}
 
 # server-based syntax
 # ======================
