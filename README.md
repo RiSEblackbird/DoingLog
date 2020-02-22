@@ -253,6 +253,7 @@ definitions:
         {
         }
       ```
+  - [Configuring Deploys #Capistrano | circleci](https://circleci.com/docs/ja/2.0/deployment-integrations/#capistrano) 200223
 
   - Local CLI
     - [CircleCI の設定ファイルでハマったらローカルで Validate チェックしよう](https://qiita.com/zoe302/items/261fe8e781fe52a653d8)
