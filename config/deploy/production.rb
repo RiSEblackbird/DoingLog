@@ -1,8 +1,8 @@
 # EC2のサーバー接続設定
 
-server "13.115.67.8", user: "ec2-user", roles: %w{app db web}
+server "13.115.67.8", user: "TIS", roles: %w{app db web}
 
-set :ssh_options, keys: '~/.ssh/DoingLog.pem' 
+set :ssh_options, keys: '~/.ssh/doinglog_key_rsa' 
 
 # server-based syntax
 # ======================
