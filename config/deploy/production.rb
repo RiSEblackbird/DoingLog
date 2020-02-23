@@ -5,7 +5,7 @@ server "13.115.67.8", user: "TIS", roles: %w{app db web}
 # set :ssh_options, keys: '~/.ssh/doinglog_key_rsa' 
 
 set :ssh_options, {
-  keys: [File.expand_path('~/.ssh/doinglog_key_rsa')],
+  keys: [File.expand_path('~/.ssh/DoingLog.pem')],
   forward_agent: true
 }
 
