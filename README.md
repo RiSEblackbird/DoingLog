@@ -264,6 +264,8 @@ definitions:
       ```$circleci build --job deploy .circleci/config.yml```
 
 - Docker
+  - [Install Docker Compose | docker docs](https://docs.docker.com/compose/install/) 200224
+    - 各OC毎のインストール方法。
   - [mysql Docker Official Images](https://hub.docker.com/_/mysql)
   - [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
   - [SO - You must use Bundler 2 or greater with this lockfile. When running docker-compose up locally](https://stackoverflow.com/questions/55909543/you-must-use-bundler-2-or-greater-with-this-lockfile-when-running-docker-compos)
