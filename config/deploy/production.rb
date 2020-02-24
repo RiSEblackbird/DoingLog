@@ -1,12 +1,13 @@
 # EC2のサーバー接続設定
 
-server "13.115.67.8", user: "TIS", roles: %w{app db web}
+server "13.115.67.8", user: "Taishi", roles: %w{app db web}
 
 # set :ssh_options, keys: '~/.ssh/doinglog_key_rsa' 
 
 set :ssh_options, {
-  keys: [File.expand_path('~/.ssh/DoingLog.pem')],
-  forward_agent: true
+  forward_agent: true,
+  user: fetch(:user),
+  keys: [File.expand_path('~/.ssh/DoingLog.pem')]
 }
 
 # server-based syntax
