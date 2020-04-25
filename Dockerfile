@@ -35,4 +35,5 @@ ADD . $APP_ROOT
 
 RUN mkdir -p tmp/sockets
 
+RUN mkdir /var/run/mysqld
 RUN touch /var/run/mysqld/mysqld.sock
