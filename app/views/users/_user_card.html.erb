@@ -1,7 +1,7 @@
 <div>
-  <ul>ID: <% user.id %>, Name: <% user.username %></ul>
+  <ul>ID: <%= user.id %>, Name: <%= user.username %></ul>
   <ul>Profile: </ul>
-  <ul> <% user.profile %></ul>
+  <ul> <%= user.profile %></ul>
   <div id="user-btn">
     <% if user_signed_in? %>
       <% if current_user %>
