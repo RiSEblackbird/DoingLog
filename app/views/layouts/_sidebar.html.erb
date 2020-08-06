@@ -1,9 +1,9 @@
 <div class="sidebar">
   <div class="user_menu">
     <% if user_signed_in? %>
-      <button><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>
-      <button><%= link_to 'ユーザー設定', edit_user_registration_path %></button>
-      <button><%= link_to 'ユーザー詳細', current_user %></button>
+      <button class='menu_bottun'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>
+      <button class='menu_bottun'><%= link_to 'ユーザー設定', edit_user_registration_path %></button>
+      <button class='menu_bottun'><%= link_to 'ユーザー詳細', current_user %></button>
     <% end %>
   </div>
 

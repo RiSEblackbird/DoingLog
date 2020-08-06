@@ -7,14 +7,17 @@
   margin-top: 0px;
   margin-bottom: 0px;
   height: 100vh;
-  padding: 2px;
+  padding: 5px;
   // min-width: 9em;
   // max-width: 10em;
   .card-body {
     min-height: 15vh;
   }
   .user_menu {
-    font-size: 5px;
+    font-size: 14px;
+    .menu_bottun {
+      width: 100%;
+    }
   }
 
 }
