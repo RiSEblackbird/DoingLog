@@ -7,7 +7,7 @@
         <li class="nav-item align-self-center">
           <form class="form-inline">
           <% if user_signed_in? %>
-            <%= link_to '新規記事作成', new_article_url,
+            <%= link_to '新規記事作成', new_doing_url,
                 class: 'btn btn-sm btn-dark btn-block navbar-text p-1' %>
           <% end %>
           </form>
@@ -17,11 +17,10 @@
         <div class="dropdown">
           <button class="btn btn-sm btn-dark dropdown-toggle" type="button"
             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag current_user.image.url, class: 'rounded', :size => '15x15' if current_user.image.url.present? %>
             <%= current_user.username %> さん
             <%= render 'users/user_card_attribute_badge', user: current_user %>
           </button>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <button class="dropdown-item" type="button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>
             <button class="dropdown-item" type="button"><%= link_to 'ユーザー設定変更', edit_user_registration_path %></button>
             <button class="dropdown-item" type="button"><%= link_to 'ユーザー詳細', current_user %></button>

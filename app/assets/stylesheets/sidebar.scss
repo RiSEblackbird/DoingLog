@@ -1,15 +1,23 @@
 /* サイドバー */
 .sidebar {
-    background-color: #E5E5E5;
-    z-index: 4;
-    position: sticky;
-    // top: -10vh;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    height: 100vh;
-    // min-width: 9em;
-    // max-width: 10em;
-    .card-body {
-      min-height: 15vh;
+  background-color: #E5E5E5;
+  z-index: 4;
+  position: sticky;
+  // top: -10vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 100vh;
+  padding: 5px;
+  // min-width: 9em;
+  // max-width: 10em;
+  .card-body {
+    min-height: 15vh;
+  }
+  .user_menu {
+    font-size: 14px;
+    .menu_bottun {
+      width: 100%;
     }
   }
+
+}
