@@ -9,7 +9,7 @@ RSpec.describe DoingLog, type: :model do
   end
 
   it '文字制限(上限)：titleを101文字で登録する' do
-    doing = FactoryBot.build(:doing, title: Faker::Base.regexify('[aふぃ5786おさgjgsgあ]{101}'))
+    doing = FactoryBot.build(:doing, title: Faker::Base.regexify('[/\A[ぁ-んァ-ン一-龥]/]{101}'))
     doing.valid?
     expect(doing.errors[:title]).to include('タイトルは100文字以内にしてください。')
   end
