@@ -87,3 +87,13 @@ RSpec.configure do |config|
     driven_by :selenium_chrome_headless
   end
 end
+
+# deviseの公式docより : https://github.com/heartcombo/devise/wiki/How-To:-Test-controllers-with-Rails-(and-RSpec)#controller-specs
+require 'devise'
+
+RSpec.configure do |config|
+  # For Devise > 4.1.1
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  # Use the following instead if you are on Devise <= 4.1.1
+  # config.include Devise::TestHelpers, :type => :controller
+end
