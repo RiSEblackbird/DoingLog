@@ -36,7 +36,7 @@ group :development, :test do
   gem 'capybara', '>= 2.15'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '4.0.0.beta3'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'selenium-webdriver'
