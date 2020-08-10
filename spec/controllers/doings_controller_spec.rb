@@ -33,7 +33,7 @@ RSpec.describe DoingsController, type: :controller do
     context 'ログイン無しの場合の応答' do
       it 'サインインページへのリダイレクト：/doing/show' do
         get :show, params: { id: @doing.id }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス：/doing/show' do
@@ -65,7 +65,7 @@ RSpec.describe DoingsController, type: :controller do
     context 'ログイン無しの場合の応答' do
       it 'サインインページへのリダイレクト：/doing/new' do
         get :new
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス：/doing/show' do
@@ -128,7 +128,7 @@ RSpec.describe DoingsController, type: :controller do
                                                      title: 'New doing title')
         patch :update, params: { id: @doing.id,
                                  doing: doing_params }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス' do
@@ -180,7 +180,7 @@ RSpec.describe DoingsController, type: :controller do
 
       it 'サインインページへのリダイレクト' do
         delete :destroy, params: { id: @doing.id }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス' do

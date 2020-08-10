@@ -25,7 +25,7 @@ RSpec.describe UsersController, type: :controller do
     context 'ログイン無しの場合の応答' do
       it 'サインインページへのリダイレクト：/user/index' do
         get :index
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス：/user/index' do
@@ -57,7 +57,7 @@ RSpec.describe UsersController, type: :controller do
     context 'ログイン無しの場合の応答' do
       it 'サインインページへのリダイレクト：/user/show' do
         get :show, params: { id: @user.id }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス：/user/show' do
