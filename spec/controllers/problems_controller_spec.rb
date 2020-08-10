@@ -20,7 +20,7 @@ RSpec.describe ProblemsController, type: :controller do
       it '成功：/problem/show' do
         sign_in @user
         get :show, params: { id: @problem.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do

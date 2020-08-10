@@ -17,6 +17,6 @@ RSpec.feature "TryShows", type: :system do
 
       expect(page).to have_content "時刻指定で起動するライトの設置"
       expect(page).to have_content "照度の高い照明による目覚まし時計を枕元に設置し、日中はカーテンレールに下げて窓際から室内に向けることで照度を増強させた。"
-    }.to be_success
+    }.to be_successful
   end
 end

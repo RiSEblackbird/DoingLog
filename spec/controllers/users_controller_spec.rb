@@ -12,7 +12,7 @@ RSpec.describe UsersController, type: :controller do
       it '成功：/user/index' do
         sign_in @user
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do
@@ -44,7 +44,7 @@ RSpec.describe UsersController, type: :controller do
       it '成功：/user/show' do
         sign_in @user
         get :show, params: { id: @user.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do

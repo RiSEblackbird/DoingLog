@@ -20,7 +20,7 @@ RSpec.describe TriesController, type: :controller do
       it '成功：/try/show' do
         sign_in @user
         get :show, params: { id: @try.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do

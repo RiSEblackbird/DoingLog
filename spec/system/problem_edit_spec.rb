@@ -21,6 +21,6 @@ RSpec.feature "ProblemEdits", type: :system do
       expect(page).to have_content "部屋がビルの陰に位置するので、自然光による照度が確保できない。"
       expect(page).to have_checked_field('解決済み')
       expect(page).to have_content "User: #{user.username}"
-    }.to be_success
+    }.to be_successful
   end
 end

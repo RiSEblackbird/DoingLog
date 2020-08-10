@@ -15,6 +15,6 @@ RSpec.feature "ProblemShows", type: :system do
 
       expect(page).to have_content "日中の室内照度不足"
       expect(page).to have_content "部屋がビルの陰に位置するため、自然光による照度が確保できない。"
-    }.to be_success
+    }.to be_successful
   end
 end

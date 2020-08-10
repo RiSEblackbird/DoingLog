@@ -19,6 +19,6 @@ RSpec.feature "ProblemIndices", type: :system do
       expect(page).to have_content "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。"
       expect(page).to have_content "Postmanの使用方法の学習"
       expect(page).to have_content "API開発でよく使用されるらしいPostmanの使用方法を探る。"
-    }.to be_success
+    }.to be_successful
   end
 end

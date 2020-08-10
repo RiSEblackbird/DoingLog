@@ -20,7 +20,7 @@ RSpec.describe DoingsController, type: :controller do
       it '成功：/doing/show' do
         sign_in @user
         get :show, params: { id: @doing.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do
@@ -52,7 +52,7 @@ RSpec.describe DoingsController, type: :controller do
       it '成功：/doing/new' do
         sign_in @user
         get :new
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do
