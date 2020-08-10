@@ -9,13 +9,13 @@ RSpec.describe User, type: :model do
   end
 
   it '文字制限(上限)：usernameを31文字で登録する' do
-    user = FactoryBot.build(:user, username: Faker::Base.regexify('[/\A[ぁ-んァ-ン一-龥]/]{31}'))
+    user = FactoryBot.build(:user, username: Faker::Base.regexify('[aあア亜ｱ123gkａー-]{31}'))
     user.valid?
     expect(user.errors[:username]).to include('ユーザー名は30文字以内で入力してください')
   end
 
   it '文字制限(上限)：profileを151文字で登録する' do
-    user = FactoryBot.build(:user, profile: Faker::Base.regexify('[/\A[ぁ-んァ-ン一-龥]/]{151}'))
+    user = FactoryBot.build(:user, profile: Faker::Base.regexify('[aあア亜ｱ123gkａー-]{151}'))
     user.valid?
     expect(user.errors[:username]).to include('プロフィール文は150文字以内で入力してください')
   end
