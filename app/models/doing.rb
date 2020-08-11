@@ -3,7 +3,7 @@
 class Doing < ApplicationRecord
   belongs_to :user, counter_cache: :doing_count
 
-  validates :title, :body, presence: true
+  validates :title, :summary, presence: true
   validates :title, length: { maximum: 100 }
   validates :summary, length: { maximum: 1000 }
 end
