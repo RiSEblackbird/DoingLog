@@ -20,7 +20,7 @@ RSpec.describe TriesController, type: :controller do
       it '成功：/try/show' do
         sign_in @user
         get :show, params: { id: @try.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do
@@ -33,7 +33,7 @@ RSpec.describe TriesController, type: :controller do
     context 'ログイン無しの場合の応答' do
       it 'サインインページへのリダイレクト：/try/show' do
         get :show, params: { id: @try.id }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス：/try/show' do
@@ -96,7 +96,7 @@ RSpec.describe TriesController, type: :controller do
                                                title: 'New try title')
         patch :update, params: { id: @try.id,
                                  try: try_params }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス' do
@@ -152,7 +152,7 @@ RSpec.describe TriesController, type: :controller do
         try_params = FactoryBot.attributes_for(:try,
                                                title: 'New try title')
         delete :destroy, params: { id: @try.id }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス' do

@@ -19,6 +19,6 @@ RSpec.feature "TryEdits", type: :system do
       expect(page).to have_content "Github - Projectsによる更新履歴の分類"
       expect(page).to have_content "Github - ProjectsとIssuesを関連付けてCommitとの紐付けによって更新履歴を詳細項目毎に分類することで振り返りや操作手順の確認などを容易にする。"
       expect(page).to have_content "User: #{user.username}"
-    }.to be_success
+    }.to be_successful
   end
 end

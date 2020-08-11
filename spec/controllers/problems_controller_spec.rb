@@ -20,7 +20,7 @@ RSpec.describe ProblemsController, type: :controller do
       it '成功：/problem/show' do
         sign_in @user
         get :show, params: { id: @problem.id }
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it '200レスポンス' do
@@ -33,7 +33,7 @@ RSpec.describe ProblemsController, type: :controller do
     context 'ログイン無しの場合の応答' do
       it 'サインインページへのリダイレクト：/problem/show' do
         get :show, params: { id: @problem.id }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス：/problem/show' do
@@ -96,7 +96,7 @@ RSpec.describe ProblemsController, type: :controller do
                                                    title: 'New problem title')
         patch :update, params: { id: @problem.id,
                                  problem: problem_params }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス' do
@@ -152,7 +152,7 @@ RSpec.describe ProblemsController, type: :controller do
         problem_params = FactoryBot.attributes_for(:problem,
                                                    title: 'New problem title')
         delete :destroy, params: { id: @problem.id }
-        expext(response).to redirect_to '/users/sign_in'
+        expect(response).to redirect_to '/users/sign_in'
       end
 
       it '302レスポンス' do

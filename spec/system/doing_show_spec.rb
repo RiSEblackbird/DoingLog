@@ -14,6 +14,6 @@ RSpec.feature "DoingShows", type: :system do
       expect(page).to have_content "Swaggerの使用方法の学習"
       expect(page).to have_content "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。"
       expect(page).to have_content "User: #{user.username}"
-    }.to be_success
+    }.to be_successful
   end
 end

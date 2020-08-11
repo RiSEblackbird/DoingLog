@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  # [devise由来] ログイン済ユーザーにのみアクセスを許可する。
+  before_action :authenticate_user!
+  
   def index
     @users = User.all
   end
