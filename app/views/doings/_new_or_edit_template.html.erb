@@ -1,3 +1,15 @@
+<% if @doing.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@doing.errors.count, "error") %> 投稿に失敗しました:</h2>
+
+    <ul>
+    <% @doing.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @doing do |f| %>
   <div class="field">
     <%= f.label :title %><br />
