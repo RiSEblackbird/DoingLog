@@ -15,7 +15,7 @@ RSpec.feature "DoingNews", type: :system do
       expect(page).to have_content "新しいDoingが投稿されました！"
       expect(page).to have_content "目玉焼きの改良"
       expect(page).to have_content "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
-      expect(page).to have_content "User: #{user.username}"
+      expect(page).to have_content :user.username
     }.to change(user.doings, :count).by(1)
   end
 end
