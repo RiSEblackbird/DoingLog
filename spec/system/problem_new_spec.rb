@@ -8,7 +8,7 @@ RSpec.feature "ProblemNews", type: :system do
 
     sign_in_as user
 
-    expect {
+    expect (
       click_link "/doings/#{doing.id}"
 
       expect(page).to have_content "住環境の改善活動"
@@ -24,6 +24,6 @@ RSpec.feature "ProblemNews", type: :system do
       expect(page).to have_content "日中の室内照度不足"
       expect(page).to have_content "部屋がビルの陰に位置するため、自然光による照度が確保できない。"
       expect(page).to have_content "User: #{user.username}"
-    }.to change(user.problems, :count).by(1)
+    ).to change(user.problems, :count).by(1)
   end
 end
