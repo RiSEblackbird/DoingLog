@@ -12,7 +12,7 @@ RSpec.feature "DoingIndices", type: :system do
 
     sign_in_as user
 
-    expect (
+    expect(
       click_link "ホーム"
 
       expect(page).to have_content "取り組み事項一覧"

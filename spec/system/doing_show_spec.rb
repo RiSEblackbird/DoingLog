@@ -8,7 +8,7 @@ RSpec.feature "DoingShows", type: :system do
 
     sign_in_as user
 
-    expect (
+    expect(
       click_link "Swaggerの使用方法の学習"
 
       expect(page).to have_content "Swaggerの使用方法の学習"

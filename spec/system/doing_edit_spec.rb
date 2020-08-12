@@ -8,7 +8,7 @@ RSpec.feature "DoingEdits", type: :system do
 
     sign_in_as user
 
-    expect (
+    expect(
       click_link "Swaggerの使用方法の学習"
       click_link "編集"
       fill_in "Title", with: "目玉焼きの改良"
