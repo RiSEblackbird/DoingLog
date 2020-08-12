@@ -9,10 +9,10 @@ RSpec.feature "DoingEdits", type: :system do
     sign_in_as user
 
     expect {
-      click_link "/doings/#{doing.id}"
+      click_link "Swaggerの使用方法の学習"
       click_link "編集"
-      fill_in "取り組みタイトル", with: "目玉焼きの改良"
-      fill_in "概要", with: "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
+      fill_in "Title", with: "目玉焼きの改良"
+      fill_in "Summary", with: "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
       click_button "編集を登録する"
 
       expect(page).to have_content "Doingの編集が完了しました。"
