@@ -8,12 +8,12 @@ RSpec.feature "DoingShows", type: :system do
 
     sign_in_as user
 
-    expect {
-      click_link "/doings/#{doing.id}"
+    expect (
+      click_link "Swaggerの使用方法の学習"
 
       expect(page).to have_content "Swaggerの使用方法の学習"
       expect(page).to have_content "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。"
-      expect(page).to have_content "User: #{user.username}"
-    }.to be_successful
+      expect(page).to have_content user.username
+    ).to be_successful
   end
 end

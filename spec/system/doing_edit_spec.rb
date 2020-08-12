@@ -8,7 +8,7 @@ RSpec.feature "DoingEdits", type: :system do
 
     sign_in_as user
 
-    expect {
+    expect (
       click_link "Swaggerの使用方法の学習"
       click_link "編集"
       fill_in "Title", with: "目玉焼きの改良"
@@ -18,7 +18,7 @@ RSpec.feature "DoingEdits", type: :system do
       expect(page).to have_content "Doingの編集が完了しました。"
       expect(page).to have_content "目玉焼きの改良"
       expect(page).to have_content "鶏卵の調理行為が課税対象となったため、代替材料の模索と、適合する新たな調理方法を検討する。"
-      expect(page).to have_content "User: #{user.username}"
-    }.to be_successful
+      expect(page).to have_content user.username
+    ).to be_successful
   end
 end
