@@ -20,6 +20,10 @@
     <%= f.text_area :summary, autofocus: true, autocomplete: "summary" %>
   </div>
   <div class="actions">
-    <%= f.submit "投稿する" %>
+    <% if current_page?(new_doing_path) %>
+      <%= f.submit '投稿する'%>
+    <% else %>
+      <%= f.submit '編集を登録する'%>
+    <% end %>
   </div>
 <% end %>
