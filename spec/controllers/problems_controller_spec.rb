@@ -31,7 +31,7 @@ RSpec.describe ProblemsController, type: :controller do
     end
 
     context 'ログイン無しの場合の応答' do
-      it 'サインインページへのリダイレクト：/problem/show' do
+      it 'ログインページへのリダイレクト：/problem/show' do
         get :show, params: { id: @problem.id }
         expect(response).to redirect_to '/users/sign_in'
       end
@@ -91,7 +91,7 @@ RSpec.describe ProblemsController, type: :controller do
         @problem = FactoryBot.create(:problem, title: "Other's")
       end
 
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         problem_params = FactoryBot.attributes_for(:problem,
                                                    title: 'New problem title')
         patch :update, params: { id: @problem.id,
@@ -148,7 +148,7 @@ RSpec.describe ProblemsController, type: :controller do
         @problem = FactoryBot.create(:problem)
       end
 
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         problem_params = FactoryBot.attributes_for(:problem,
                                                    title: 'New problem title')
         delete :destroy, params: { id: @problem.id }
@@ -192,7 +192,7 @@ RSpec.describe ProblemsController, type: :controller do
     end
 
     context 'ログイン無しの場合の応答' do
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         problem_params = FactoryBot.attributes_for(:problem)
         expect { post :create, params: { problem: problem_params } }.to redirect_to '/users/sign_in'
       end

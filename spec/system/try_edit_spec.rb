@@ -8,17 +8,15 @@ RSpec.feature "TryEdits", type: :system do
 
     sign_in_as user
 
-    expect {
-      click_link "/tries/#{try.id}"
-      click_link "編集"
-      fill_in "試したこと", with: "Github - Projectsによる更新履歴の分類"
-      fill_in "概要", with: "Github - ProjectsとIssuesを関連付けてCommitとの紐付けによって更新履歴を詳細項目毎に分類することで振り返りや操作手順の確認などを容易にする。"
-      click_button "編集を登録する"
+    click_link "/tries/#{try.id}"
+    click_link "編集"
+    fill_in "試したこと", with: "Github - Projectsによる更新履歴の分類"
+    fill_in "概要", with: "Github - ProjectsとIssuesを関連付けてCommitとの紐付けによって更新履歴を詳細項目毎に分類することで振り返りや操作手順の確認などを容易にする。"
+    click_button "編集を登録する"
 
-      expect(page).to have_content "Doingの編集が完了しました。"
-      expect(page).to have_content "Github - Projectsによる更新履歴の分類"
-      expect(page).to have_content "Github - ProjectsとIssuesを関連付けてCommitとの紐付けによって更新履歴を詳細項目毎に分類することで振り返りや操作手順の確認などを容易にする。"
-      expect(page).to have_content "User: #{user.username}"
-    }.to be_successful
+    expect(page).to have_content "Doingの編集が完了しました。"
+    expect(page).to have_content "Github - Projectsによる更新履歴の分類"
+    expect(page).to have_content "Github - ProjectsとIssuesを関連付けてCommitとの紐付けによって更新履歴を詳細項目毎に分類することで振り返りや操作手順の確認などを容易にする。"
+    expect(page).to have_content user.username
   end
 end

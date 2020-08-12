@@ -12,14 +12,12 @@ RSpec.feature "DoingIndices", type: :system do
 
     sign_in_as user
 
-    expect {
-      click_link "/doings"
+    click_link "ホーム"
 
-      expect(page).to have_content "取り組み事項一覧"
-      expect(page).to have_content "Swaggerの使用方法の学習"
-      expect(page).to have_content "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。"
-      expect(page).to have_content "Postmanの使用方法の学習"
-      expect(page).to have_content "API開発でよく使用されるらしいPostmanの使用方法を探る。"
-    }.to be_successful
+    expect(page).to have_content "Doings"
+    expect(page).to have_content "Swaggerの使用方法の学習"
+    expect(page).to have_content "API開発でよく使用されるらしいSwagger Editorの使用方法を探る。"
+    expect(page).to have_content "Postmanの使用方法の学習"
+    expect(page).to have_content "API開発でよく使用されるらしいPostmanの使用方法を探る。"
   end
 end

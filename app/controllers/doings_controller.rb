@@ -1,4 +1,7 @@
 class DoingsController < ApplicationController
+  # [devise由来] ログイン済ユーザーにのみアクセスを許可する。
+  before_action :authenticate_user!, except: %i[index show]
+
   def index
     @doings = Doing.all
   end

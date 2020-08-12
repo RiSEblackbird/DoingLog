@@ -1,0 +1,29 @@
+<% if @doing.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@doing.errors.count, "error") %> 投稿に失敗しました:</h2>
+
+    <ul>
+    <% @doing.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @doing do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br />
+    <%= f.text_area :summary, autofocus: true, autocomplete: "summary" %>
+  </div>
+  <div class="actions">
+    <% if current_page?(new_doing_path) %>
+      <%= f.submit '投稿する'%>
+    <% else %>
+      <%= f.submit '編集を登録する'%>
+    <% end %>
+  </div>
+<% end %>

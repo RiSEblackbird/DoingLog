@@ -31,7 +31,7 @@ RSpec.describe TriesController, type: :controller do
     end
 
     context 'ログイン無しの場合の応答' do
-      it 'サインインページへのリダイレクト：/try/show' do
+      it 'ログインページへのリダイレクト：/try/show' do
         get :show, params: { id: @try.id }
         expect(response).to redirect_to '/users/sign_in'
       end
@@ -91,7 +91,7 @@ RSpec.describe TriesController, type: :controller do
         @try = FactoryBot.create(:try, title: "Other's")
       end
 
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         try_params = FactoryBot.attributes_for(:try,
                                                title: 'New try title')
         patch :update, params: { id: @try.id,
@@ -148,7 +148,7 @@ RSpec.describe TriesController, type: :controller do
         @try = FactoryBot.create(:try)
       end
 
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         try_params = FactoryBot.attributes_for(:try,
                                                title: 'New try title')
         delete :destroy, params: { id: @try.id }
@@ -192,7 +192,7 @@ RSpec.describe TriesController, type: :controller do
     end
 
     context 'ログイン無しの場合の応答' do
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         try_params = FactoryBot.attributes_for(:try)
         expect { post :create, params: { try: try_params } }.to redirect_to '/users/sign_in'
       end
