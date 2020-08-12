@@ -5,6 +5,7 @@ module LoginSupport
         # fill_in "ユーザー名", with: user.username
         fill_in "Eメール", with: user.email
         fill_in "パスワード", with: user.password
+        click_button "Log in"
     end
 end
 
