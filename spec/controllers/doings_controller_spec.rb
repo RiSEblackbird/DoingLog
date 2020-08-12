@@ -31,7 +31,7 @@ RSpec.describe DoingsController, type: :controller do
     end
 
     context 'ログイン無しの場合の応答' do
-      it 'サインインページへのリダイレクト：/doing/show' do
+      it 'ログインページへのリダイレクト：/doing/show' do
         get :show, params: { id: @doing.id }
         expect(response).to redirect_to '/users/sign_in'
       end
@@ -63,7 +63,7 @@ RSpec.describe DoingsController, type: :controller do
     end
 
     context 'ログイン無しの場合の応答' do
-      it 'サインインページへのリダイレクト：/doing/new' do
+      it 'ログインページへのリダイレクト：/doing/new' do
         get :new
         expect(response).to redirect_to '/users/sign_in'
       end
@@ -123,7 +123,7 @@ RSpec.describe DoingsController, type: :controller do
         @doing = FactoryBot.create(:doing, title: "Other's")
       end
 
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         doing_params = FactoryBot.attributes_for(:doing,
                                                      title: 'New doing title')
         patch :update, params: { id: @doing.id,
@@ -178,7 +178,7 @@ RSpec.describe DoingsController, type: :controller do
         @doing = FactoryBot.create(:doing)
       end
 
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         delete :destroy, params: { id: @doing.id }
         expect(response).to redirect_to '/users/sign_in'
       end
@@ -218,7 +218,7 @@ RSpec.describe DoingsController, type: :controller do
     end
 
     context 'ログイン無しの場合の応答' do
-      it 'サインインページへのリダイレクト' do
+      it 'ログインページへのリダイレクト' do
         doing_params = FactoryBot.attributes_for(:doing)
         expect { post :create, params: { doing: doing_params } }.to redirect_to '/users/sign_in'
       end
